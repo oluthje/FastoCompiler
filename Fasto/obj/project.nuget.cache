@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "GEID1KRbXQtxF9mBnlitQW1Wn/s/o1JGXkUXgOvmXXFZLIfQuHlyvFAtDcpEof4WxWyyd6PpQ27axK1nPYtEPw==",
+  "success": true,
+  "projectFilePath": "/Users/oscarluthje/Desktop/IPS/GAssignment/fasto/Fasto/Fasto.fsproj",
+  "expectedPackageFiles": [
+    "/Users/oscarluthje/.nuget/packages/fsharp.core/7.0.200/fsharp.core.7.0.200.nupkg.sha512",
+    "/Users/oscarluthje/.nuget/packages/fslexyacc/10.2.0/fslexyacc.10.2.0.nupkg.sha512",
+    "/Users/oscarluthje/.nuget/packages/fslexyacc.runtime/10.2.0/fslexyacc.runtime.10.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}
