@@ -169,7 +169,7 @@ let rec compileExp  (e      : TypedExp)
                            instruction sequence for any value n *)
   | Constant (BoolVal p, _) ->
       (* TODO project task 1: represent `true`/`false` values as `1`/`0` *)
-      failwith "Unimplemented code generation of boolean constants"
+      [ LI (place, if p then 1 else 0) ]
   | Constant (CharVal c, pos) -> [ LI (place, int c) ]
 
   (* Create/return a label here, collect all string literals of the program
@@ -229,6 +229,18 @@ let rec compileExp  (e      : TypedExp)
       let code1 = compileExp e1 vtable t1
       let code2 = compileExp e2 vtable t2
       code1 @ code2 @ [SUB (place,t1,t2)]
+  | Times (e1, e2, pos) ->
+      let t1 = newReg "times_L"
+      let t2 = newReg "times_R"
+      let code1 = compileExp e1 vtable t1
+      let code2 = compileExp e2 vtable t2
+      code1 @ code2 @ [MUL (place,t1,t2)]
+  | Divide (e1, e2, pos) ->
+      let t1 = newReg "divide_L"
+      let t2 = newReg "divide_R"
+      let code1 = compileExp e1 vtable t1
+      let code2 = compileExp e2 vtable t2
+      code1 @ code2 @ [DIV (place,t1,t2)]
 
   (* TODO project task 1:
      Look in `AbSyn.fs` for the expression constructors `Times`, ...
@@ -237,11 +249,6 @@ let rec compileExp  (e      : TypedExp)
      version, but remember to come back and clean it up later.
      `Not` and `Negate` are simpler; you can use `XORI` for `Not`
   *)
-  | Times (_, _, _) ->
-      failwith "Unimplemented code generation of multiplication"
-
-  | Divide (_, _, _) ->
-      failwith "Unimplemented code generation of division"
 
   | Not (_, _) ->
       failwith "Unimplemented code generation of not"

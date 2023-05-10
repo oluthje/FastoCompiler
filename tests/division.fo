@@ -1,0 +1,5 @@
+fun int main() =
+    let a = 8 / 4 in
+    let b = 1 / 0 in
+    let c = write(a) in
+    write(b)
