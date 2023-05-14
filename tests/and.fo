@@ -1,0 +1,9 @@
+fun int test1() =
+    if (1 == 1) && (1 == 1) then write(1) else write(0)
+
+fun int test2() = 
+    if (1 == 0) && (1 / 0 == 1) then write(22) else write(0) 
+
+fun int main() = 
+    let a = test1() in
+    test2()
