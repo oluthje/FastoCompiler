@@ -1,1 +1,1 @@
-fail this test (div by 0 not yet implemented)
+Runtime error at line 3: division by zero

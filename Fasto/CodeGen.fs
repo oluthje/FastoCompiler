@@ -235,19 +235,20 @@ let rec compileExp  (e      : TypedExp)
       let code1 = compileExp e1 vtable t1
       let code2 = compileExp e2 vtable t2
       code1 @ code2 @ [MUL (place,t1,t2)]
-  | Divide (e1, e2, pos) ->
+  | Divide (e1, e2, (line, _)) ->
       let t1 = newReg "divide_L"
       let t2 = newReg "divide_R"
       let code1 = compileExp e1 vtable t1
       let code2 = compileExp e2 vtable t2
-      let trueLabel = newLab "trueLabel"
+      let falseLabel = newLab "falseLabel"
       code1 @ code2 @
         [ LI (place, 0)
-        ; BEQ (t2, place, trueLabel)
-        ; DIV (place, t1, t2)
-        ; LABEL trueLabel
+        ; BNE (t2, place, falseLabel)
+        ; LI (Ra0, line)
         ; LA (Ra1, "m.DivZero")
         ; J "p.RuntimeError"
+        ; LABEL falseLabel
+        ; DIV (place, t1, t2)
         ]
 
   (* TODO project task 1:
