@@ -122,5 +122,6 @@ rule Token = parse
   | "&&"                  { Parser.AND    (getPos lexbuf) }
   | "||"                  { Parser.OR     (getPos lexbuf) }
   | '~'                   { Parser.NEGATE (getPos lexbuf) }
+  | ';'                   { Parser.SEMICOLON (getPos lexbuf) }
   | eof                   { Parser.EOF    (getPos lexbuf) }
   | _                     { lexerError lexbuf "Illegal symbol in input" }

@@ -20,9 +20,18 @@ type token =
   | REDUCE of (Position)
   | IOTA of (Position)
   | ARROW of (Position)
+  | REPLICATE of (Position)
   | PLUS of (Position)
   | MINUS of (Position)
+  | TIMES of (Position)
+  | DIVIDE of (Position)
+  | AND of (Position)
+  | OR of (Position)
+  | NOT of (Position)
+  | NEGATE of (Position)
   | LESS of (Position)
+  | TRUE of (Position)
+  | FALSE of (Position)
   | INT of (Position)
   | CHAR of (Position)
   | BOOL of (Position)
@@ -56,9 +65,18 @@ type tokenId =
     | TOKEN_REDUCE
     | TOKEN_IOTA
     | TOKEN_ARROW
+    | TOKEN_REPLICATE
     | TOKEN_PLUS
     | TOKEN_MINUS
+    | TOKEN_TIMES
+    | TOKEN_DIVIDE
+    | TOKEN_AND
+    | TOKEN_OR
+    | TOKEN_NOT
+    | TOKEN_NEGATE
     | TOKEN_LESS
+    | TOKEN_TRUE
+    | TOKEN_FALSE
     | TOKEN_INT
     | TOKEN_CHAR
     | TOKEN_BOOL
@@ -77,6 +95,7 @@ type tokenId =
 type nonTerminalId = 
     | NONTERM__startProg
     | NONTERM_Prog
+    | NONTERM_Dec
     | NONTERM_FunDecs
     | NONTERM_Fun
     | NONTERM_Type
