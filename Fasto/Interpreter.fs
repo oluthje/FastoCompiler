@@ -264,6 +264,7 @@ let rec evalExp (e : UntypedExp, vtab : VarTable, ftab : FunTable) : Value =
           | ArrayVal (lst,tp1) ->
                List.fold (fun acc x -> evalFunArg (farg, vtab, ftab, pos, [acc;x])) nel lst
           | otherwise -> reportNonArray "3rd argument of \"reduce\"" arr pos
+  
   (* TODO project task 2: `replicate(n, a)`
      Look in `AbSyn.fs` for the arguments of the `Replicate`
      (`Map`,`Scan`) expression constructors.
@@ -273,8 +274,19 @@ let rec evalExp (e : UntypedExp, vtab : VarTable, ftab : FunTable) : Value =
          the value of `a`; otherwise raise an error (containing
          a meaningful message).
   *)
-  | Replicate (_, _, _, _) ->
-        failwith "Unimplemented interpretation of replicate"
+  | Replicate (e1, e2, _, pos) ->
+      let n = evalExp(e1, vtab, ftab)
+      let a = evalExp(e2, vtab, ftab)
+      match n with
+            | IntVal size ->
+                  if size >= 0
+                  then ArrayVal( List.map (fun x -> a) [0..size-1], Int )
+                  else let msg = sprintf "Argument of \"replicate\" is negative: %i" size
+                       raise (MyError(msg, pos))
+            | otherwise -> reportWrongType "argument of \"replicate\"" Int n pos
+
+            // let mlst = List.map (fun x -> evalFunArg (farg, vtab, ftab, pos, [x])) lst
+            // ArrayVal (mlst, farg_ret_type)
 
   (* TODO project task 2: `filter(p, arr)`
        pattern match the implementation of map:
