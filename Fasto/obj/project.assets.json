@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "FSharp.Core/7.0.200": {
+      "FSharp.Core/7.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/FSharp.Core.dll": {
@@ -85,15 +85,15 @@
     }
   },
   "libraries": {
-    "FSharp.Core/7.0.200": {
-      "sha512": "NmgUnpNH6Zu9B0SPIhojyo38gnPdkdYFYQfbd6zosEH32kbGY/g/Klk7PfOWe1NAe/O1YOMmK9KhwQ2OWsWEbg==",
+    "FSharp.Core/7.0.0": {
+      "sha512": "8hzwUheAViWMAHWQTr6kR/19C4LhjZ4TlftKfNeZO9y7XnRUzLTK6FJS1C+0oObuUe0e4KndYxjWE+Zgea9YXQ==",
       "type": "package",
-      "path": "fsharp.core/7.0.200",
+      "path": "fsharp.core/7.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "fsharp.core.7.0.200.nupkg.sha512",
+        "fsharp.core.7.0.0.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/netstandard2.0/FSharp.Core.dll",
         "lib/netstandard2.0/FSharp.Core.xml",
@@ -219,30 +219,30 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "FSharp.Core >= 7.0.200",
+      "FSharp.Core >= 7.0.0",
       "FsLexYacc >= 10.2.0"
     ]
   },
   "packageFolders": {
-    "/Users/oscarluthje/.nuget/packages/": {}
+    "C:\\Users\\Nynne\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/oscarluthje/Desktop/IPS/GAssignment/fasto/Fasto/Fasto.fsproj",
+      "projectUniqueName": "C:\\Users\\Nynne\\OneDrive\\Dokumenter\\KU\\IPS\\FastoCompiler\\Fasto\\Fasto.fsproj",
       "projectName": "Fasto",
-      "projectPath": "/Users/oscarluthje/Desktop/IPS/GAssignment/fasto/Fasto/Fasto.fsproj",
-      "packagesPath": "/Users/oscarluthje/.nuget/packages/",
-      "outputPath": "/Users/oscarluthje/Desktop/IPS/GAssignment/fasto/Fasto/obj/",
+      "projectPath": "C:\\Users\\Nynne\\OneDrive\\Dokumenter\\KU\\IPS\\FastoCompiler\\Fasto\\Fasto.fsproj",
+      "packagesPath": "C:\\Users\\Nynne\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nynne\\OneDrive\\Dokumenter\\KU\\IPS\\FastoCompiler\\Fasto\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/oscarluthje/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Nynne\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/sdk/7.0.203/FSharp/library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.102\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -259,7 +259,7 @@
           "FSharp.Core": {
             "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[7.0.200, )",
+            "version": "[7.0.0, )",
             "generatePathProperty": true
           },
           "FsLexYacc": {
@@ -284,7 +284,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
