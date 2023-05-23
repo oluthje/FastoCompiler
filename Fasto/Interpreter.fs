@@ -285,9 +285,6 @@ let rec evalExp (e : UntypedExp, vtab : VarTable, ftab : FunTable) : Value =
                        raise (MyError(msg, pos))
             | otherwise -> reportWrongType "argument of \"replicate\"" Int n pos
 
-            // let mlst = List.map (fun x -> evalFunArg (farg, vtab, ftab, pos, [x])) lst
-            // ArrayVal (mlst, farg_ret_type)
-
   (* TODO project task 2: `filter(p, arr)`
        pattern match the implementation of map:
        - check that the function `p` result type (use `rtpFunArg`) is bool;
@@ -296,8 +293,19 @@ let rec evalExp (e : UntypedExp, vtab : VarTable, ftab : FunTable) : Value =
          under predicate `p`, i.e., `p(a) = true`;
        - create an `ArrayVal` from the (list) result of the previous step.
   *)
-  | Filter (_, _, _, _) ->
-        failwith "Unimplemented interpretation of filter"
+  | Filter (farg, arrexp, _, pos) ->
+      let farg_ret_type = rtpFunArg farg ftab pos
+      let arr = evalExp(arrexp, vtab, ftab)
+
+      // make sure farg returns bool
+      if farg_ret_type <> Bool then raise (MyError("Argument of filter must return bool", pos))
+
+      match arr with
+      | ArrayVal (lst,tp1) ->
+            let mlst = List.filter (fun x -> evalFunArg (farg, vtab, ftab, pos, [x]) = BoolVal true) lst
+            ArrayVal (mlst, tp1)
+      | otherwise -> reportNonArray "2nd argument of \"filter\"" arr pos
+
 
   (* TODO project task 2: `scan(f, ne, arr)`
      Implementation similar to reduce, except that it produces an array
