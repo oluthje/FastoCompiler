@@ -18,49 +18,71 @@ f.no_way:
 # Function main
 f.main:
 	sw	x1, -4(x2)
-	addi	x2, x2, -4
+	sw	x19, -12(x2)
+	sw	x18, -8(x2)
+	addi	x2, x2, -12
 	li	x10, 0
-# was:	li	_tmp_4_, 0
-	beq	x10, x0, l.endAnd_5_
-# was:	beq	_tmp_4_, x0, l.endAnd_5_
+# was:	li	_cond_10_, 0
+	bne	x10, x0, l.then_7_
+# was:	bne	_cond_10_, x0, l.then_7_
+	j	l.else_8_
+l.then_7_:
+	li	x19, 0
+# was:	li	_and_L_5_, 0
 	jal	f.no_way
 # was:	jal	f.no_way, 
-# 	mv	_tmp_4_,x10
-l.endAnd_5_:
-	mv	x11, x10
-# was:	mv	_let_a_3_, _tmp_4_
+# 	mv	_and_R_6_,x10
+	and	x11, x19, x10
+# was:	and	_tmp_4_, _and_L_5_, _and_R_6_
+	j	l.endif_9_
+l.else_8_:
+	and	x11, x0, x0
+# was:	and	_tmp_4_, x0, x0
+l.endif_9_:
+# 	mv	_let_a_3_,_tmp_4_
 	la	x10, s.true
 # was:	la	x10, s.true
-	bne	x11, x0, l.wBoolF_6_
-# was:	bne	_let_a_3_, x0, l.wBoolF_6_
+	bne	x11, x0, l.wBoolF_11_
+# was:	bne	_let_a_3_, x0, l.wBoolF_11_
 	la	x10, s.false
 # was:	la	x10, s.false
-l.wBoolF_6_:
+l.wBoolF_11_:
 	jal	p.putstring
 # was:	jal	p.putstring, x10
 	li	x10, 1
-# was:	li	_tmp_8_, 1
-	bne	x10, x0, l.endOr_9_
-# was:	bne	_tmp_8_, x0, l.endOr_9_
+# was:	li	_cond_19_, 1
+	bne	x10, x0, l.then_16_
+# was:	bne	_cond_19_, x0, l.then_16_
+	j	l.else_17_
+l.then_16_:
+	ori	x11, x18, 1
+# was:	ori	_tmp_13_, _or_L_14_, 1
+	j	l.endif_18_
+l.else_17_:
+	li	x18, 1
+# was:	li	_or_L_14_, 1
 	jal	f.no_way
 # was:	jal	f.no_way, 
-# 	mv	_tmp_8_,x10
-l.endOr_9_:
-	mv	x11, x10
-# was:	mv	_let_b_7_, _tmp_8_
+# 	mv	_or_R_15_,x10
+	or	x11, x18, x10
+# was:	or	_tmp_13_, _or_L_14_, _or_R_15_
+l.endif_18_:
+# 	mv	_let_b_12_,_tmp_13_
 	la	x10, s.true
 # was:	la	x10, s.true
-	bne	x11, x0, l.wBoolF_10_
-# was:	bne	_let_b_7_, x0, l.wBoolF_10_
+	bne	x11, x0, l.wBoolF_20_
+# was:	bne	_let_b_12_, x0, l.wBoolF_20_
 	la	x10, s.false
 # was:	la	x10, s.false
-l.wBoolF_10_:
+l.wBoolF_20_:
 	jal	p.putstring
 # was:	jal	p.putstring, x10
 	li	x10, 1
 # was:	li	_mainres_2_, 1
 # 	mv	x10,_mainres_2_
-	addi	x2, x2, 4
+	addi	x2, x2, 12
+	lw	x19, -12(x2)
+	lw	x18, -8(x2)
 	lw	x1, -4(x2)
 	jr	x1
 f.ord:

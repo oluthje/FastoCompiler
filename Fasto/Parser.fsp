@@ -67,8 +67,8 @@ let parse_error_rich =
 Prog :    FunDecs EOF   { $1 }
 ;
 
-Dec : ID DEQ Exp        { Dec (fst $1, $3, snd $1) }
-        | ID DEQ Exp SEMICOLON { Dec (fst $1, $3, snd $1) }
+Dec : ID EQ Exp                { Dec (fst $1, $3, snd $1) }
+    | ID EQ Exp SEMICOLON      { Dec (fst $1, $3, snd $1) }
 ;
 
 FunDecs : FUN Fun FunDecs { $2 :: $3 }
@@ -134,7 +134,7 @@ Exp : NUM            { Constant (IntVal (fst $1), snd $1) }
                      { Replicate ($3, $5, (), $1) }
     | LPAR Exp RPAR  { $2 }
     // TODO: task 1(b): replace this with a more general production
-    | LET Dec IN Exp %prec letprec
+    | LET Dec IN Exp 
                      { Let ($2, $4, $1) }
 ;
 
@@ -148,5 +148,7 @@ FunArg : ID    { FunName (fst $1 ) }
        | FN Type LPAR Params RPAR ARROW Exp
                { Lambda ($2, $4, $7, $1) }
 ;
+//    FunName of string
+//   | Lambda of Type * Param list * Exp<'T> * Position
 
 %%
