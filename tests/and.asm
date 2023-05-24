@@ -10,36 +10,56 @@ f.test1:
 	sw	x18, -8(x2)
 	addi	x2, x2, -8
 	li	x12, 1
-# was:	li	_eq_L_8_, 1
+# was:	li	_eq_L_12_, 1
+	li	x10, 1
+# was:	li	_eq_R_13_, 1
+	li	x11, 0
+# was:	li	_cond_11_, 0
+	bne	x12, x10, l.false_14_
+# was:	bne	_eq_L_12_, _eq_R_13_, l.false_14_
 	li	x11, 1
-# was:	li	_eq_R_9_, 1
+# was:	li	_cond_11_, 1
+l.false_14_:
+	bne	x11, x0, l.then_8_
+# was:	bne	_cond_11_, x0, l.then_8_
+	j	l.else_9_
+l.then_8_:
+	li	x12, 1
+# was:	li	_eq_L_15_, 1
+	li	x11, 1
+# was:	li	_eq_R_16_, 1
 	li	x10, 0
 # was:	li	_and_L_6_, 0
-	bne	x12, x11, l.false_10_
-# was:	bne	_eq_L_8_, _eq_R_9_, l.false_10_
+	bne	x12, x11, l.false_17_
+# was:	bne	_eq_L_15_, _eq_R_16_, l.false_17_
 	li	x10, 1
 # was:	li	_and_L_6_, 1
-l.false_10_:
-	li	x11, 1
-# was:	li	_eq_L_11_, 1
+l.false_17_:
 	li	x13, 1
-# was:	li	_eq_R_12_, 1
+# was:	li	_eq_L_18_, 1
+	li	x11, 1
+# was:	li	_eq_R_19_, 1
 	li	x12, 0
 # was:	li	_and_R_7_, 0
-	bne	x11, x13, l.false_13_
-# was:	bne	_eq_L_11_, _eq_R_12_, l.false_13_
+	bne	x13, x11, l.false_20_
+# was:	bne	_eq_L_18_, _eq_R_19_, l.false_20_
 	li	x12, 1
 # was:	li	_and_R_7_, 1
-l.false_13_:
+l.false_20_:
 	and	x10, x10, x12
 # was:	and	_cond_5_, _and_L_6_, _and_R_7_
+	j	l.endif_10_
+l.else_9_:
+	and	x10, x0, x0
+# was:	and	_cond_5_, x0, x0
+l.endif_10_:
 	bne	x10, x0, l.then_2_
 # was:	bne	_cond_5_, x0, l.then_2_
 	j	l.else_3_
 l.then_2_:
 	li	x18, 1
-# was:	li	_tmp_14_, 1
-# 	mv	_test1res_1_,_tmp_14_
+# was:	li	_tmp_21_, 1
+# 	mv	_test1res_1_,_tmp_21_
 	mv	x10, x18
 # was:	mv	x10, _test1res_1_
 	jal	p.putint
@@ -47,8 +67,8 @@ l.then_2_:
 	j	l.endif_4_
 l.else_3_:
 	li	x18, 0
-# was:	li	_tmp_15_, 0
-# 	mv	_test1res_1_,_tmp_15_
+# was:	li	_tmp_22_, 0
+# 	mv	_test1res_1_,_tmp_22_
 	mv	x10, x18
 # was:	mv	x10, _test1res_1_
 	jal	p.putint
@@ -65,57 +85,87 @@ f.test2:
 	sw	x1, -4(x2)
 	sw	x18, -8(x2)
 	addi	x2, x2, -8
-	li	x11, 1
-# was:	li	_eq_L_23_, 1
-	li	x12, 0
-# was:	li	_eq_R_24_, 0
+	li	x12, 1
+# was:	li	_eq_L_34_, 1
 	li	x10, 0
-# was:	li	_and_L_21_, 0
-	bne	x11, x12, l.false_25_
-# was:	bne	_eq_L_23_, _eq_R_24_, l.false_25_
-	li	x10, 1
-# was:	li	_and_L_21_, 1
-l.false_25_:
-	li	x12, 1
-# was:	li	_divide_L_28_, 1
+# was:	li	_eq_R_35_, 0
 	li	x11, 0
-# was:	li	_divide_R_29_, 0
-	div	x11, x12, x11
-# was:	div	_eq_L_26_, _divide_L_28_, _divide_R_29_
-	li	x13, 1
-# was:	li	_eq_R_27_, 1
-	li	x12, 0
-# was:	li	_and_R_22_, 0
-	bne	x11, x13, l.false_30_
-# was:	bne	_eq_L_26_, _eq_R_27_, l.false_30_
+# was:	li	_cond_33_, 0
+	bne	x12, x10, l.false_36_
+# was:	bne	_eq_L_34_, _eq_R_35_, l.false_36_
+	li	x11, 1
+# was:	li	_cond_33_, 1
+l.false_36_:
+	bne	x11, x0, l.then_30_
+# was:	bne	_cond_33_, x0, l.then_30_
+	j	l.else_31_
+l.then_30_:
 	li	x12, 1
-# was:	li	_and_R_22_, 1
-l.false_30_:
-	and	x10, x10, x12
-# was:	and	_cond_20_, _and_L_21_, _and_R_22_
-	bne	x10, x0, l.then_17_
-# was:	bne	_cond_20_, x0, l.then_17_
-	j	l.else_18_
-l.then_17_:
+# was:	li	_eq_L_37_, 1
+	li	x11, 0
+# was:	li	_eq_R_38_, 0
+	li	x10, 0
+# was:	li	_and_L_28_, 0
+	bne	x12, x11, l.false_39_
+# was:	bne	_eq_L_37_, _eq_R_38_, l.false_39_
+	li	x10, 1
+# was:	li	_and_L_28_, 1
+l.false_39_:
+	li	x13, 1
+# was:	li	_divide_L_42_, 1
+	li	x12, 0
+# was:	li	_divide_R_43_, 0
+	li	x11, 0
+# was:	li	_eq_L_40_, 0
+	bne	x12, x11, l.falseLabel_44_
+# was:	bne	_divide_R_43_, _eq_L_40_, l.falseLabel_44_
+	li	x10, 5
+# was:	li	x10, 5
+	la	x11, m.DivZero
+# was:	la	x11, m.DivZero
+	j	p.RuntimeError
+l.falseLabel_44_:
+	div	x11, x13, x12
+# was:	div	_eq_L_40_, _divide_L_42_, _divide_R_43_
+	li	x12, 1
+# was:	li	_eq_R_41_, 1
+	li	x13, 0
+# was:	li	_and_R_29_, 0
+	bne	x11, x12, l.false_45_
+# was:	bne	_eq_L_40_, _eq_R_41_, l.false_45_
+	li	x13, 1
+# was:	li	_and_R_29_, 1
+l.false_45_:
+	and	x10, x10, x13
+# was:	and	_cond_27_, _and_L_28_, _and_R_29_
+	j	l.endif_32_
+l.else_31_:
+	and	x10, x0, x0
+# was:	and	_cond_27_, x0, x0
+l.endif_32_:
+	bne	x10, x0, l.then_24_
+# was:	bne	_cond_27_, x0, l.then_24_
+	j	l.else_25_
+l.then_24_:
 	li	x18, 22
-# was:	li	_tmp_31_, 22
-# 	mv	_test2res_16_,_tmp_31_
+# was:	li	_tmp_46_, 22
+# 	mv	_test2res_23_,_tmp_46_
 	mv	x10, x18
-# was:	mv	x10, _test2res_16_
+# was:	mv	x10, _test2res_23_
 	jal	p.putint
 # was:	jal	p.putint, x10
-	j	l.endif_19_
-l.else_18_:
+	j	l.endif_26_
+l.else_25_:
 	li	x18, 0
-# was:	li	_tmp_32_, 0
-# 	mv	_test2res_16_,_tmp_32_
+# was:	li	_tmp_47_, 0
+# 	mv	_test2res_23_,_tmp_47_
 	mv	x10, x18
-# was:	mv	x10, _test2res_16_
+# was:	mv	x10, _test2res_23_
 	jal	p.putint
 # was:	jal	p.putint, x10
-l.endif_19_:
+l.endif_26_:
 	mv	x10, x18
-# was:	mv	x10, _test2res_16_
+# was:	mv	x10, _test2res_23_
 	addi	x2, x2, 8
 	lw	x18, -8(x2)
 	lw	x1, -4(x2)
@@ -126,11 +176,11 @@ f.main:
 	addi	x2, x2, -4
 	jal	f.test1
 # was:	jal	f.test1, 
-# 	mv	_let_a_34_,x10
+# 	mv	_let_a_49_,x10
 	jal	f.test2
 # was:	jal	f.test2, 
-# 	mv	_mainres_33_,x10
-# 	mv	x10,_mainres_33_
+# 	mv	_mainres_48_,x10
+# 	mv	x10,_mainres_48_
 	addi	x2, x2, 4
 	lw	x1, -4(x2)
 	jr	x1

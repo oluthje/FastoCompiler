@@ -37,21 +37,21 @@ f.main:
 	sw	x19, -12(x2)
 	sw	x18, -8(x2)
 	addi	x2, x2, -24
-	li	x12, 7
+	li	x11, 7
 # was:	li	_size_7_, 7
-	bge	x12, x0, l.safe_8_
-# was:	bge	_size_7_, x0, l.safe_8_
+	li	x12, 0
+# was:	li	_a_exp_reg_8_, 0
+	bge	x11, x0, l.safe_9_
+# was:	bge	_size_7_, x0, l.safe_9_
 	li	x10, 4
 # was:	li	x10, 4
 	la	x11, m.BadSize
 # was:	la	x11, m.BadSize
 	j	p.RuntimeError
-l.safe_8_:
-	li	x11, 0
-# was:	li	_elem_9_, 0
+l.safe_9_:
 	mv	x10, x3
 # was:	mv	_let_fs_6_, x3
-	addi	x13, x12, 3
+	addi	x13, x11, 3
 # was:	addi	_tmp_14_, _size_7_, 3
 	andi	x13, x13, -4
 # was:	andi	_tmp_14_, _tmp_14_, -4
@@ -59,19 +59,19 @@ l.safe_8_:
 # was:	addi	_tmp_14_, _tmp_14_, 4
 	add	x3, x3, x13
 # was:	add	x3, x3, _tmp_14_
-	sw	x12, 0(x10)
+	sw	x11, 0(x10)
 # was:	sw	_size_7_, 0(_let_fs_6_)
 	addi	x13, x10, 4
 # was:	addi	_addr_10_, _let_fs_6_, 4
 	mv	x14, x0
 # was:	mv	_i_11_, x0
 l.loop_beg_12_:
-	bge	x14, x12, l.loop_end_13_
+	bge	x14, x11, l.loop_end_13_
 # was:	bge	_i_11_, _size_7_, l.loop_end_13_
-	sb	x11, 0(x13)
-# was:	sb	_elem_9_, 0(_addr_10_)
-	addi	x13, x13, 1
-# was:	addi	_addr_10_, _addr_10_, 1
+	sw	x12, 0(x13)
+# was:	sw	_a_exp_reg_8_, 0(_addr_10_)
+	addi	x13, x13, 4
+# was:	addi	_addr_10_, _addr_10_, 4
 	addi	x14, x14, 1
 # was:	addi	_i_11_, _i_11_, 1
 	j	l.loop_beg_12_
