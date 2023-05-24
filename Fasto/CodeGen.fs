@@ -715,8 +715,56 @@ let rec compileExp  (e      : TypedExp)
         the current location of the result iterator at every iteration of
         the loop.
   *)
-  | Scan (_, _, _, _, _) ->
-      failwith "Unimplemented code generation of scan"
+  | Scan (binop, acc_exp, arr_exp, tp, pos) ->
+      let size_reg = newReg "size" (* size of input/output array *)
+      let arr_reg  = newReg "arr"  (* address of array *)
+      let elem_reg = newReg "elem" (* address of current element *)
+      let acc_reg = newReg "acc" (* address of current accumulator *)
+      let res_reg = newReg "res"
+      let arr_code = compileExp arr_exp vtable arr_reg
+      let acc_exp_code = compileExp acc_exp vtable acc_reg
+
+      let get_size = [ LW (size_reg, arr_reg, 0) ]
+
+      let addr_reg = newReg "addrg" (* address of element in new array *)
+      let i_reg = newReg "i"
+      let init_regs = [ ADDI (addr_reg, place, 4)
+                      ; MV (i_reg, Rzero)
+                      ; ADDI (elem_reg, arr_reg, 4)
+                      ]
+      let loop_beg = newLab "loop_beg"
+      let loop_end = newLab "loop_end"
+      let loop_header = [ LABEL (loop_beg)
+                        ; BGE (i_reg, size_reg, loop_end)
+                        ]
+      (* map is 'arr[i] = f(old_arr[i])'. *)
+      let src_size = getElemSize tp
+      let dst_size = getElemSize tp
+      let loop_map =
+             [ Load src_size (res_reg, elem_reg, 0)
+             ; ADDI (elem_reg, elem_reg, elemSizeToInt src_size)
+             ]
+             @ applyFunArg(binop, [res_reg; acc_reg], vtable, res_reg, pos)
+             @
+             [
+             Store dst_size (res_reg, addr_reg, 0)
+             ; MV (acc_reg, res_reg)
+             ; ADDI (addr_reg, addr_reg, elemSizeToInt dst_size)
+             ]
+
+      let loop_footer =
+              [ ADDI (i_reg, i_reg, 1)
+              ; J loop_beg
+              ; LABEL loop_end
+              ]
+      arr_code
+       @ acc_exp_code
+       @ get_size
+       @ dynalloc (size_reg, place, tp)
+       @ init_regs
+       @ loop_header
+       @ loop_map
+       @ loop_footer
 
 and applyFunArg ( ff     : TypedFunArg
                 , args   : reg list
