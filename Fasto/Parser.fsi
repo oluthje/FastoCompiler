@@ -95,13 +95,13 @@ type tokenId =
 type nonTerminalId = 
     | NONTERM__startProg
     | NONTERM_Prog
-    | NONTERM_Dec
     | NONTERM_FunDecs
     | NONTERM_Fun
     | NONTERM_Type
     | NONTERM_Params
-    | NONTERM_Exp
+    | NONTERM_Dec
     | NONTERM_Decs
+    | NONTERM_Exp
     | NONTERM_Exps
     | NONTERM_FunArg
 /// This function maps tokens to integer indexes
