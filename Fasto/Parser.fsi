@@ -7,10 +7,10 @@ type token =
   | RBRACKET of (Position)
   | LCURLY of (Position)
   | RCURLY of (Position)
+  | SEMICOLON of (Position)
   | FUN of (Position)
   | FN of (Position)
   | COMMA of (Position)
-  | SEMICOLON of (Position)
   | READ of (Position)
   | WRITE of (Position)
   | DEQ of (Position)
@@ -52,10 +52,10 @@ type tokenId =
     | TOKEN_RBRACKET
     | TOKEN_LCURLY
     | TOKEN_RCURLY
+    | TOKEN_SEMICOLON
     | TOKEN_FUN
     | TOKEN_FN
     | TOKEN_COMMA
-    | TOKEN_SEMICOLON
     | TOKEN_READ
     | TOKEN_WRITE
     | TOKEN_DEQ
@@ -101,6 +101,7 @@ type nonTerminalId =
     | NONTERM_Type
     | NONTERM_Params
     | NONTERM_Exp
+    | NONTERM_Decs
     | NONTERM_Exps
     | NONTERM_FunArg
 /// This function maps tokens to integer indexes

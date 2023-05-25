@@ -8,10 +8,10 @@ state 0:  items:    _startProg ->  . Prog
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   shift 8
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -58,10 +58,10 @@ state 1:  items:    _startProg -> Prog .
     action 'RBRACKET' (noprec):   accept
     action 'LCURLY' (noprec):   accept
     action 'RCURLY' (noprec):   accept
+    action 'SEMICOLON' (noprec):   accept
     action 'FUN' (noprec):   accept
     action 'FN' (noprec):   accept
     action 'COMMA' (noprec):   accept
-    action 'SEMICOLON' (noprec):   accept
     action 'READ' (noprec):   accept
     action 'WRITE' (noprec):   accept
     action 'DEQ' (noprec):   accept
@@ -106,10 +106,10 @@ state 1:  items:    _startProg -> Prog .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -154,10 +154,10 @@ state 1:  items:    _startProg -> Prog .
     action 'RBRACKET' (noprec):   reduce Prog --> FunDecs 'EOF'
     action 'LCURLY' (noprec):   reduce Prog --> FunDecs 'EOF'
     action 'RCURLY' (noprec):   reduce Prog --> FunDecs 'EOF'
+    action 'SEMICOLON' (noprec):   reduce Prog --> FunDecs 'EOF'
     action 'FUN' (noprec):   reduce Prog --> FunDecs 'EOF'
     action 'FN' (noprec):   reduce Prog --> FunDecs 'EOF'
     action 'COMMA' (noprec):   reduce Prog --> FunDecs 'EOF'
-    action 'SEMICOLON' (noprec):   reduce Prog --> FunDecs 'EOF'
     action 'READ' (noprec):   reduce Prog --> FunDecs 'EOF'
     action 'WRITE' (noprec):   reduce Prog --> FunDecs 'EOF'
     action 'DEQ' (noprec):   reduce Prog --> FunDecs 'EOF'
@@ -203,10 +203,10 @@ state 1:  items:    _startProg -> Prog .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -252,10 +252,10 @@ state 1:  items:    _startProg -> Prog .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -310,10 +310,10 @@ state 6:  items:    Dec -> 'ID' 'EQ' Exp .
     action 'RBRACKET' (noprec):   reduce Dec --> 'ID' 'EQ' Exp
     action 'LCURLY' (noprec):   reduce Dec --> 'ID' 'EQ' Exp
     action 'RCURLY' (noprec):   reduce Dec --> 'ID' 'EQ' Exp
+    action 'SEMICOLON' (noprec):   shift 7
     action 'FUN' (noprec):   reduce Dec --> 'ID' 'EQ' Exp
     action 'FN' (noprec):   reduce Dec --> 'ID' 'EQ' Exp
     action 'COMMA' (noprec):   reduce Dec --> 'ID' 'EQ' Exp
-    action 'SEMICOLON' (noprec):   shift 7
     action 'READ' (noprec):   reduce Dec --> 'ID' 'EQ' Exp
     action 'WRITE' (noprec):   reduce Dec --> 'ID' 'EQ' Exp
     action 'DEQ' (explicit left 9998):   shift 73
@@ -358,10 +358,10 @@ state 6:  items:    Dec -> 'ID' 'EQ' Exp .
     action 'RBRACKET' (noprec):   reduce Dec --> 'ID' 'EQ' Exp 'SEMICOLON'
     action 'LCURLY' (noprec):   reduce Dec --> 'ID' 'EQ' Exp 'SEMICOLON'
     action 'RCURLY' (noprec):   reduce Dec --> 'ID' 'EQ' Exp 'SEMICOLON'
+    action 'SEMICOLON' (noprec):   reduce Dec --> 'ID' 'EQ' Exp 'SEMICOLON'
     action 'FUN' (noprec):   reduce Dec --> 'ID' 'EQ' Exp 'SEMICOLON'
     action 'FN' (noprec):   reduce Dec --> 'ID' 'EQ' Exp 'SEMICOLON'
     action 'COMMA' (noprec):   reduce Dec --> 'ID' 'EQ' Exp 'SEMICOLON'
-    action 'SEMICOLON' (noprec):   reduce Dec --> 'ID' 'EQ' Exp 'SEMICOLON'
     action 'READ' (noprec):   reduce Dec --> 'ID' 'EQ' Exp 'SEMICOLON'
     action 'WRITE' (noprec):   reduce Dec --> 'ID' 'EQ' Exp 'SEMICOLON'
     action 'DEQ' (noprec):   reduce Dec --> 'ID' 'EQ' Exp 'SEMICOLON'
@@ -407,10 +407,10 @@ state 6:  items:    Dec -> 'ID' 'EQ' Exp .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -458,10 +458,10 @@ state 9:  items:    FunDecs -> 'FUN' Fun . FunDecs
     action 'RBRACKET' (noprec):   reduce FunDecs --> 'FUN' Fun
     action 'LCURLY' (noprec):   reduce FunDecs --> 'FUN' Fun
     action 'RCURLY' (noprec):   reduce FunDecs --> 'FUN' Fun
+    action 'SEMICOLON' (noprec):   reduce FunDecs --> 'FUN' Fun
     action 'FUN' (noprec):   shift 8
     action 'FN' (noprec):   reduce FunDecs --> 'FUN' Fun
     action 'COMMA' (noprec):   reduce FunDecs --> 'FUN' Fun
-    action 'SEMICOLON' (noprec):   reduce FunDecs --> 'FUN' Fun
     action 'READ' (noprec):   reduce FunDecs --> 'FUN' Fun
     action 'WRITE' (noprec):   reduce FunDecs --> 'FUN' Fun
     action 'DEQ' (noprec):   reduce FunDecs --> 'FUN' Fun
@@ -507,10 +507,10 @@ state 10:  items:    FunDecs -> 'FUN' Fun FunDecs .
     action 'RBRACKET' (noprec):   reduce FunDecs --> 'FUN' Fun FunDecs
     action 'LCURLY' (noprec):   reduce FunDecs --> 'FUN' Fun FunDecs
     action 'RCURLY' (noprec):   reduce FunDecs --> 'FUN' Fun FunDecs
+    action 'SEMICOLON' (noprec):   reduce FunDecs --> 'FUN' Fun FunDecs
     action 'FUN' (noprec):   reduce FunDecs --> 'FUN' Fun FunDecs
     action 'FN' (noprec):   reduce FunDecs --> 'FUN' Fun FunDecs
     action 'COMMA' (noprec):   reduce FunDecs --> 'FUN' Fun FunDecs
-    action 'SEMICOLON' (noprec):   reduce FunDecs --> 'FUN' Fun FunDecs
     action 'READ' (noprec):   reduce FunDecs --> 'FUN' Fun FunDecs
     action 'WRITE' (noprec):   reduce FunDecs --> 'FUN' Fun FunDecs
     action 'DEQ' (noprec):   reduce FunDecs --> 'FUN' Fun FunDecs
@@ -556,10 +556,10 @@ state 10:  items:    FunDecs -> 'FUN' Fun FunDecs .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -605,10 +605,10 @@ state 10:  items:    FunDecs -> 'FUN' Fun FunDecs .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -654,10 +654,10 @@ state 10:  items:    FunDecs -> 'FUN' Fun FunDecs .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -704,10 +704,10 @@ state 14:  items:    Fun -> Type 'ID' 'LPAR' Params . 'RPAR' 'EQ' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -752,10 +752,10 @@ state 14:  items:    Fun -> Type 'ID' 'LPAR' Params . 'RPAR' 'EQ' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -800,10 +800,10 @@ state 14:  items:    Fun -> Type 'ID' 'LPAR' Params . 'RPAR' 'EQ' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -857,10 +857,10 @@ state 17:  items:    Fun -> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp .
     action 'RBRACKET' (noprec):   reduce Fun --> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp
     action 'LCURLY' (noprec):   reduce Fun --> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp
     action 'RCURLY' (noprec):   reduce Fun --> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp
+    action 'SEMICOLON' (noprec):   reduce Fun --> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp
     action 'FUN' (noprec):   reduce Fun --> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp
     action 'FN' (noprec):   reduce Fun --> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp
     action 'COMMA' (noprec):   reduce Fun --> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp
-    action 'SEMICOLON' (noprec):   reduce Fun --> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp
     action 'READ' (noprec):   reduce Fun --> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp
     action 'WRITE' (noprec):   reduce Fun --> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp
     action 'DEQ' (explicit left 9998):   shift 73
@@ -905,10 +905,10 @@ state 17:  items:    Fun -> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -953,10 +953,10 @@ state 17:  items:    Fun -> Type 'ID' 'LPAR' Params 'RPAR' 'EQ' Exp .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -1010,10 +1010,10 @@ state 20:  items:    Fun -> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp .
     action 'RBRACKET' (noprec):   reduce Fun --> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp
     action 'LCURLY' (noprec):   reduce Fun --> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp
     action 'RCURLY' (noprec):   reduce Fun --> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp
+    action 'SEMICOLON' (noprec):   reduce Fun --> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp
     action 'FUN' (noprec):   reduce Fun --> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp
     action 'FN' (noprec):   reduce Fun --> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp
     action 'COMMA' (noprec):   reduce Fun --> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp
-    action 'SEMICOLON' (noprec):   reduce Fun --> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp
     action 'READ' (noprec):   reduce Fun --> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp
     action 'WRITE' (noprec):   reduce Fun --> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp
     action 'DEQ' (explicit left 9998):   shift 73
@@ -1058,10 +1058,10 @@ state 20:  items:    Fun -> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp .
     action 'RBRACKET' (noprec):   reduce Type --> 'INT'
     action 'LCURLY' (noprec):   reduce Type --> 'INT'
     action 'RCURLY' (noprec):   reduce Type --> 'INT'
+    action 'SEMICOLON' (noprec):   reduce Type --> 'INT'
     action 'FUN' (noprec):   reduce Type --> 'INT'
     action 'FN' (noprec):   reduce Type --> 'INT'
     action 'COMMA' (noprec):   reduce Type --> 'INT'
-    action 'SEMICOLON' (noprec):   reduce Type --> 'INT'
     action 'READ' (noprec):   reduce Type --> 'INT'
     action 'WRITE' (noprec):   reduce Type --> 'INT'
     action 'DEQ' (noprec):   reduce Type --> 'INT'
@@ -1106,10 +1106,10 @@ state 20:  items:    Fun -> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp .
     action 'RBRACKET' (noprec):   reduce Type --> 'CHAR'
     action 'LCURLY' (noprec):   reduce Type --> 'CHAR'
     action 'RCURLY' (noprec):   reduce Type --> 'CHAR'
+    action 'SEMICOLON' (noprec):   reduce Type --> 'CHAR'
     action 'FUN' (noprec):   reduce Type --> 'CHAR'
     action 'FN' (noprec):   reduce Type --> 'CHAR'
     action 'COMMA' (noprec):   reduce Type --> 'CHAR'
-    action 'SEMICOLON' (noprec):   reduce Type --> 'CHAR'
     action 'READ' (noprec):   reduce Type --> 'CHAR'
     action 'WRITE' (noprec):   reduce Type --> 'CHAR'
     action 'DEQ' (noprec):   reduce Type --> 'CHAR'
@@ -1154,10 +1154,10 @@ state 20:  items:    Fun -> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp .
     action 'RBRACKET' (noprec):   reduce Type --> 'BOOL'
     action 'LCURLY' (noprec):   reduce Type --> 'BOOL'
     action 'RCURLY' (noprec):   reduce Type --> 'BOOL'
+    action 'SEMICOLON' (noprec):   reduce Type --> 'BOOL'
     action 'FUN' (noprec):   reduce Type --> 'BOOL'
     action 'FN' (noprec):   reduce Type --> 'BOOL'
     action 'COMMA' (noprec):   reduce Type --> 'BOOL'
-    action 'SEMICOLON' (noprec):   reduce Type --> 'BOOL'
     action 'READ' (noprec):   reduce Type --> 'BOOL'
     action 'WRITE' (noprec):   reduce Type --> 'BOOL'
     action 'DEQ' (noprec):   reduce Type --> 'BOOL'
@@ -1202,10 +1202,10 @@ state 20:  items:    Fun -> Type 'ID' 'LPAR' 'RPAR' 'EQ' Exp .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -1251,10 +1251,10 @@ state 25:  items:    Type -> 'LBRACKET' Type . 'RBRACKET'
     action 'RBRACKET' (noprec):   shift 26
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -1299,10 +1299,10 @@ state 25:  items:    Type -> 'LBRACKET' Type . 'RBRACKET'
     action 'RBRACKET' (noprec):   reduce Type --> 'LBRACKET' Type 'RBRACKET'
     action 'LCURLY' (noprec):   reduce Type --> 'LBRACKET' Type 'RBRACKET'
     action 'RCURLY' (noprec):   reduce Type --> 'LBRACKET' Type 'RBRACKET'
+    action 'SEMICOLON' (noprec):   reduce Type --> 'LBRACKET' Type 'RBRACKET'
     action 'FUN' (noprec):   reduce Type --> 'LBRACKET' Type 'RBRACKET'
     action 'FN' (noprec):   reduce Type --> 'LBRACKET' Type 'RBRACKET'
     action 'COMMA' (noprec):   reduce Type --> 'LBRACKET' Type 'RBRACKET'
-    action 'SEMICOLON' (noprec):   reduce Type --> 'LBRACKET' Type 'RBRACKET'
     action 'READ' (noprec):   reduce Type --> 'LBRACKET' Type 'RBRACKET'
     action 'WRITE' (noprec):   reduce Type --> 'LBRACKET' Type 'RBRACKET'
     action 'DEQ' (noprec):   reduce Type --> 'LBRACKET' Type 'RBRACKET'
@@ -1348,10 +1348,10 @@ state 25:  items:    Type -> 'LBRACKET' Type . 'RBRACKET'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -1397,10 +1397,10 @@ state 25:  items:    Type -> 'LBRACKET' Type . 'RBRACKET'
     action 'RBRACKET' (noprec):   reduce Params --> Type 'ID'
     action 'LCURLY' (noprec):   reduce Params --> Type 'ID'
     action 'RCURLY' (noprec):   reduce Params --> Type 'ID'
+    action 'SEMICOLON' (noprec):   reduce Params --> Type 'ID'
     action 'FUN' (noprec):   reduce Params --> Type 'ID'
     action 'FN' (noprec):   reduce Params --> Type 'ID'
     action 'COMMA' (noprec):   shift 29
-    action 'SEMICOLON' (noprec):   reduce Params --> Type 'ID'
     action 'READ' (noprec):   reduce Params --> Type 'ID'
     action 'WRITE' (noprec):   reduce Params --> Type 'ID'
     action 'DEQ' (noprec):   reduce Params --> Type 'ID'
@@ -1445,10 +1445,10 @@ state 25:  items:    Type -> 'LBRACKET' Type . 'RBRACKET'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -1495,10 +1495,10 @@ state 30:  items:    Params -> Type 'ID' 'COMMA' Params .
     action 'RBRACKET' (noprec):   reduce Params --> Type 'ID' 'COMMA' Params
     action 'LCURLY' (noprec):   reduce Params --> Type 'ID' 'COMMA' Params
     action 'RCURLY' (noprec):   reduce Params --> Type 'ID' 'COMMA' Params
+    action 'SEMICOLON' (noprec):   reduce Params --> Type 'ID' 'COMMA' Params
     action 'FUN' (noprec):   reduce Params --> Type 'ID' 'COMMA' Params
     action 'FN' (noprec):   reduce Params --> Type 'ID' 'COMMA' Params
     action 'COMMA' (noprec):   reduce Params --> Type 'ID' 'COMMA' Params
-    action 'SEMICOLON' (noprec):   reduce Params --> Type 'ID' 'COMMA' Params
     action 'READ' (noprec):   reduce Params --> Type 'ID' 'COMMA' Params
     action 'WRITE' (noprec):   reduce Params --> Type 'ID' 'COMMA' Params
     action 'DEQ' (noprec):   reduce Params --> Type 'ID' 'COMMA' Params
@@ -1543,10 +1543,10 @@ state 30:  items:    Params -> Type 'ID' 'COMMA' Params .
     action 'RBRACKET' (noprec):   reduce Exp --> 'NUM'
     action 'LCURLY' (noprec):   reduce Exp --> 'NUM'
     action 'RCURLY' (noprec):   reduce Exp --> 'NUM'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'NUM'
     action 'FUN' (noprec):   reduce Exp --> 'NUM'
     action 'FN' (noprec):   reduce Exp --> 'NUM'
     action 'COMMA' (noprec):   reduce Exp --> 'NUM'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'NUM'
     action 'READ' (noprec):   reduce Exp --> 'NUM'
     action 'WRITE' (noprec):   reduce Exp --> 'NUM'
     action 'DEQ' (noprec):   reduce Exp --> 'NUM'
@@ -1591,10 +1591,10 @@ state 30:  items:    Params -> Type 'ID' 'COMMA' Params .
     action 'RBRACKET' (noprec):   reduce Exp --> 'CHARLIT'
     action 'LCURLY' (noprec):   reduce Exp --> 'CHARLIT'
     action 'RCURLY' (noprec):   reduce Exp --> 'CHARLIT'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'CHARLIT'
     action 'FUN' (noprec):   reduce Exp --> 'CHARLIT'
     action 'FN' (noprec):   reduce Exp --> 'CHARLIT'
     action 'COMMA' (noprec):   reduce Exp --> 'CHARLIT'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'CHARLIT'
     action 'READ' (noprec):   reduce Exp --> 'CHARLIT'
     action 'WRITE' (noprec):   reduce Exp --> 'CHARLIT'
     action 'DEQ' (noprec):   reduce Exp --> 'CHARLIT'
@@ -1639,10 +1639,10 @@ state 30:  items:    Params -> Type 'ID' 'COMMA' Params .
     action 'RBRACKET' (noprec):   reduce Exp --> 'TRUE'
     action 'LCURLY' (noprec):   reduce Exp --> 'TRUE'
     action 'RCURLY' (noprec):   reduce Exp --> 'TRUE'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'TRUE'
     action 'FUN' (noprec):   reduce Exp --> 'TRUE'
     action 'FN' (noprec):   reduce Exp --> 'TRUE'
     action 'COMMA' (noprec):   reduce Exp --> 'TRUE'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'TRUE'
     action 'READ' (noprec):   reduce Exp --> 'TRUE'
     action 'WRITE' (noprec):   reduce Exp --> 'TRUE'
     action 'DEQ' (noprec):   reduce Exp --> 'TRUE'
@@ -1687,10 +1687,10 @@ state 30:  items:    Params -> Type 'ID' 'COMMA' Params .
     action 'RBRACKET' (noprec):   reduce Exp --> 'FALSE'
     action 'LCURLY' (noprec):   reduce Exp --> 'FALSE'
     action 'RCURLY' (noprec):   reduce Exp --> 'FALSE'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'FALSE'
     action 'FUN' (noprec):   reduce Exp --> 'FALSE'
     action 'FN' (noprec):   reduce Exp --> 'FALSE'
     action 'COMMA' (noprec):   reduce Exp --> 'FALSE'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'FALSE'
     action 'READ' (noprec):   reduce Exp --> 'FALSE'
     action 'WRITE' (noprec):   reduce Exp --> 'FALSE'
     action 'DEQ' (noprec):   reduce Exp --> 'FALSE'
@@ -1737,10 +1737,10 @@ state 30:  items:    Params -> Type 'ID' 'COMMA' Params .
     action 'RBRACKET' (noprec):   reduce Exp --> 'ID'
     action 'LCURLY' (noprec):   reduce Exp --> 'ID'
     action 'RCURLY' (noprec):   reduce Exp --> 'ID'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'ID'
     action 'FUN' (noprec):   reduce Exp --> 'ID'
     action 'FN' (noprec):   reduce Exp --> 'ID'
     action 'COMMA' (noprec):   reduce Exp --> 'ID'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'ID'
     action 'READ' (noprec):   reduce Exp --> 'ID'
     action 'WRITE' (noprec):   reduce Exp --> 'ID'
     action 'DEQ' (noprec):   reduce Exp --> 'ID'
@@ -1785,10 +1785,10 @@ state 30:  items:    Params -> Type 'ID' 'COMMA' Params .
     action 'RBRACKET' (noprec):   reduce Exp --> 'STRINGLIT'
     action 'LCURLY' (noprec):   reduce Exp --> 'STRINGLIT'
     action 'RCURLY' (noprec):   reduce Exp --> 'STRINGLIT'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'STRINGLIT'
     action 'FUN' (noprec):   reduce Exp --> 'STRINGLIT'
     action 'FN' (noprec):   reduce Exp --> 'STRINGLIT'
     action 'COMMA' (noprec):   reduce Exp --> 'STRINGLIT'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'STRINGLIT'
     action 'READ' (noprec):   reduce Exp --> 'STRINGLIT'
     action 'WRITE' (noprec):   reduce Exp --> 'STRINGLIT'
     action 'DEQ' (noprec):   reduce Exp --> 'STRINGLIT'
@@ -1833,10 +1833,10 @@ state 30:  items:    Params -> Type 'ID' 'COMMA' Params .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -1883,10 +1883,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   shift 39
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -1931,10 +1931,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   reduce Exp --> 'LCURLY' Exps 'RCURLY'
     action 'LCURLY' (noprec):   reduce Exp --> 'LCURLY' Exps 'RCURLY'
     action 'RCURLY' (noprec):   reduce Exp --> 'LCURLY' Exps 'RCURLY'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'LCURLY' Exps 'RCURLY'
     action 'FUN' (noprec):   reduce Exp --> 'LCURLY' Exps 'RCURLY'
     action 'FN' (noprec):   reduce Exp --> 'LCURLY' Exps 'RCURLY'
     action 'COMMA' (noprec):   reduce Exp --> 'LCURLY' Exps 'RCURLY'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'LCURLY' Exps 'RCURLY'
     action 'READ' (noprec):   reduce Exp --> 'LCURLY' Exps 'RCURLY'
     action 'WRITE' (noprec):   reduce Exp --> 'LCURLY' Exps 'RCURLY'
     action 'DEQ' (noprec):   reduce Exp --> 'LCURLY' Exps 'RCURLY'
@@ -1987,10 +1987,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (explicit left 9999):   reduce Exp --> Exp 'PLUS' Exp
     action 'LCURLY' (explicit left 9999):   reduce Exp --> Exp 'PLUS' Exp
     action 'RCURLY' (explicit left 9999):   reduce Exp --> Exp 'PLUS' Exp
+    action 'SEMICOLON' (explicit left 9999):   reduce Exp --> Exp 'PLUS' Exp
     action 'FUN' (explicit left 9999):   reduce Exp --> Exp 'PLUS' Exp
     action 'FN' (explicit left 9999):   reduce Exp --> Exp 'PLUS' Exp
     action 'COMMA' (explicit left 9999):   reduce Exp --> Exp 'PLUS' Exp
-    action 'SEMICOLON' (explicit left 9999):   reduce Exp --> Exp 'PLUS' Exp
     action 'READ' (explicit left 9999):   reduce Exp --> Exp 'PLUS' Exp
     action 'WRITE' (explicit left 9999):   reduce Exp --> Exp 'PLUS' Exp
     action 'DEQ' (explicit left 9999):   reduce Exp --> Exp 'PLUS' Exp
@@ -2043,10 +2043,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (explicit left 9999):   reduce Exp --> Exp 'MINUS' Exp
     action 'LCURLY' (explicit left 9999):   reduce Exp --> Exp 'MINUS' Exp
     action 'RCURLY' (explicit left 9999):   reduce Exp --> Exp 'MINUS' Exp
+    action 'SEMICOLON' (explicit left 9999):   reduce Exp --> Exp 'MINUS' Exp
     action 'FUN' (explicit left 9999):   reduce Exp --> Exp 'MINUS' Exp
     action 'FN' (explicit left 9999):   reduce Exp --> Exp 'MINUS' Exp
     action 'COMMA' (explicit left 9999):   reduce Exp --> Exp 'MINUS' Exp
-    action 'SEMICOLON' (explicit left 9999):   reduce Exp --> Exp 'MINUS' Exp
     action 'READ' (explicit left 9999):   reduce Exp --> Exp 'MINUS' Exp
     action 'WRITE' (explicit left 9999):   reduce Exp --> Exp 'MINUS' Exp
     action 'DEQ' (explicit left 9999):   reduce Exp --> Exp 'MINUS' Exp
@@ -2099,10 +2099,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
     action 'LCURLY' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
     action 'RCURLY' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
+    action 'SEMICOLON' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
     action 'FUN' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
     action 'FN' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
     action 'COMMA' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
-    action 'SEMICOLON' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
     action 'READ' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
     action 'WRITE' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
     action 'DEQ' (explicit left 9999):   reduce Exp --> Exp 'TIMES' Exp
@@ -2155,10 +2155,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (explicit left 9999):   reduce Exp --> Exp 'DIVIDE' Exp
     action 'LCURLY' (explicit left 9999):   reduce Exp --> Exp 'DIVIDE' Exp
     action 'RCURLY' (explicit left 9999):   reduce Exp --> Exp 'DIVIDE' Exp
+    action 'SEMICOLON' (explicit left 9999):   reduce Exp --> Exp 'DIVIDE' Exp
     action 'FUN' (explicit left 9999):   reduce Exp --> Exp 'DIVIDE' Exp
     action 'FN' (explicit left 9999):   reduce Exp --> Exp 'DIVIDE' Exp
     action 'COMMA' (explicit left 9999):   reduce Exp --> Exp 'DIVIDE' Exp
-    action 'SEMICOLON' (explicit left 9999):   reduce Exp --> Exp 'DIVIDE' Exp
     action 'READ' (explicit left 9999):   reduce Exp --> Exp 'DIVIDE' Exp
     action 'WRITE' (explicit left 9999):   reduce Exp --> Exp 'DIVIDE' Exp
     action 'DEQ' (explicit left 9999):   reduce Exp --> Exp 'DIVIDE' Exp
@@ -2211,10 +2211,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (explicit left 9998):   reduce Exp --> Exp 'AND' Exp
     action 'LCURLY' (explicit left 9998):   reduce Exp --> Exp 'AND' Exp
     action 'RCURLY' (explicit left 9998):   reduce Exp --> Exp 'AND' Exp
+    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> Exp 'AND' Exp
     action 'FUN' (explicit left 9998):   reduce Exp --> Exp 'AND' Exp
     action 'FN' (explicit left 9998):   reduce Exp --> Exp 'AND' Exp
     action 'COMMA' (explicit left 9998):   reduce Exp --> Exp 'AND' Exp
-    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> Exp 'AND' Exp
     action 'READ' (explicit left 9998):   reduce Exp --> Exp 'AND' Exp
     action 'WRITE' (explicit left 9998):   reduce Exp --> Exp 'AND' Exp
     action 'DEQ' (explicit left 9998):   reduce Exp --> Exp 'AND' Exp
@@ -2267,10 +2267,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (explicit left 9998):   reduce Exp --> Exp 'OR' Exp
     action 'LCURLY' (explicit left 9998):   reduce Exp --> Exp 'OR' Exp
     action 'RCURLY' (explicit left 9998):   reduce Exp --> Exp 'OR' Exp
+    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> Exp 'OR' Exp
     action 'FUN' (explicit left 9998):   reduce Exp --> Exp 'OR' Exp
     action 'FN' (explicit left 9998):   reduce Exp --> Exp 'OR' Exp
     action 'COMMA' (explicit left 9998):   reduce Exp --> Exp 'OR' Exp
-    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> Exp 'OR' Exp
     action 'READ' (explicit left 9998):   reduce Exp --> Exp 'OR' Exp
     action 'WRITE' (explicit left 9998):   reduce Exp --> Exp 'OR' Exp
     action 'DEQ' (explicit left 9998):   reduce Exp --> Exp 'OR' Exp
@@ -2323,10 +2323,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (explicit left 9998):   reduce Exp --> 'NOT' Exp
     action 'LCURLY' (explicit left 9998):   reduce Exp --> 'NOT' Exp
     action 'RCURLY' (explicit left 9998):   reduce Exp --> 'NOT' Exp
+    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> 'NOT' Exp
     action 'FUN' (explicit left 9998):   reduce Exp --> 'NOT' Exp
     action 'FN' (explicit left 9998):   reduce Exp --> 'NOT' Exp
     action 'COMMA' (explicit left 9998):   reduce Exp --> 'NOT' Exp
-    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> 'NOT' Exp
     action 'READ' (explicit left 9998):   reduce Exp --> 'NOT' Exp
     action 'WRITE' (explicit left 9998):   reduce Exp --> 'NOT' Exp
     action 'DEQ' (explicit left 9998):   reduce Exp --> 'NOT' Exp
@@ -2379,10 +2379,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (explicit left 9998):   reduce Exp --> 'NEGATE' Exp
     action 'LCURLY' (explicit left 9998):   reduce Exp --> 'NEGATE' Exp
     action 'RCURLY' (explicit left 9998):   reduce Exp --> 'NEGATE' Exp
+    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> 'NEGATE' Exp
     action 'FUN' (explicit left 9998):   reduce Exp --> 'NEGATE' Exp
     action 'FN' (explicit left 9998):   reduce Exp --> 'NEGATE' Exp
     action 'COMMA' (explicit left 9998):   reduce Exp --> 'NEGATE' Exp
-    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> 'NEGATE' Exp
     action 'READ' (explicit left 9998):   reduce Exp --> 'NEGATE' Exp
     action 'WRITE' (explicit left 9998):   reduce Exp --> 'NEGATE' Exp
     action 'DEQ' (explicit left 9998):   reduce Exp --> 'NEGATE' Exp
@@ -2435,10 +2435,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (explicit left 9998):   reduce Exp --> Exp 'DEQ' Exp
     action 'LCURLY' (explicit left 9998):   reduce Exp --> Exp 'DEQ' Exp
     action 'RCURLY' (explicit left 9998):   reduce Exp --> Exp 'DEQ' Exp
+    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> Exp 'DEQ' Exp
     action 'FUN' (explicit left 9998):   reduce Exp --> Exp 'DEQ' Exp
     action 'FN' (explicit left 9998):   reduce Exp --> Exp 'DEQ' Exp
     action 'COMMA' (explicit left 9998):   reduce Exp --> Exp 'DEQ' Exp
-    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> Exp 'DEQ' Exp
     action 'READ' (explicit left 9998):   reduce Exp --> Exp 'DEQ' Exp
     action 'WRITE' (explicit left 9998):   reduce Exp --> Exp 'DEQ' Exp
     action 'DEQ' (explicit left 9998):   reduce Exp --> Exp 'DEQ' Exp
@@ -2491,10 +2491,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (explicit left 9998):   reduce Exp --> Exp 'LTH' Exp
     action 'LCURLY' (explicit left 9998):   reduce Exp --> Exp 'LTH' Exp
     action 'RCURLY' (explicit left 9998):   reduce Exp --> Exp 'LTH' Exp
+    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> Exp 'LTH' Exp
     action 'FUN' (explicit left 9998):   reduce Exp --> Exp 'LTH' Exp
     action 'FN' (explicit left 9998):   reduce Exp --> Exp 'LTH' Exp
     action 'COMMA' (explicit left 9998):   reduce Exp --> Exp 'LTH' Exp
-    action 'SEMICOLON' (explicit left 9998):   reduce Exp --> Exp 'LTH' Exp
     action 'READ' (explicit left 9998):   reduce Exp --> Exp 'LTH' Exp
     action 'WRITE' (explicit left 9998):   reduce Exp --> Exp 'LTH' Exp
     action 'DEQ' (explicit left 9998):   reduce Exp --> Exp 'LTH' Exp
@@ -2547,10 +2547,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (explicit left 9998):   shift 73
@@ -2603,10 +2603,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (explicit left 9998):   shift 73
@@ -2659,10 +2659,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (explicit nonassoc 9997):   reduce Exp --> 'IF' Exp 'THEN' Exp 'ELSE' Exp
     action 'LCURLY' (explicit nonassoc 9997):   reduce Exp --> 'IF' Exp 'THEN' Exp 'ELSE' Exp
     action 'RCURLY' (explicit nonassoc 9997):   reduce Exp --> 'IF' Exp 'THEN' Exp 'ELSE' Exp
+    action 'SEMICOLON' (explicit nonassoc 9997):   reduce Exp --> 'IF' Exp 'THEN' Exp 'ELSE' Exp
     action 'FUN' (explicit nonassoc 9997):   reduce Exp --> 'IF' Exp 'THEN' Exp 'ELSE' Exp
     action 'FN' (explicit nonassoc 9997):   reduce Exp --> 'IF' Exp 'THEN' Exp 'ELSE' Exp
     action 'COMMA' (explicit nonassoc 9997):   reduce Exp --> 'IF' Exp 'THEN' Exp 'ELSE' Exp
-    action 'SEMICOLON' (explicit nonassoc 9997):   reduce Exp --> 'IF' Exp 'THEN' Exp 'ELSE' Exp
     action 'READ' (explicit nonassoc 9997):   reduce Exp --> 'IF' Exp 'THEN' Exp 'ELSE' Exp
     action 'WRITE' (explicit nonassoc 9997):   reduce Exp --> 'IF' Exp 'THEN' Exp 'ELSE' Exp
     action 'DEQ' (explicit left 9998):   shift 73
@@ -2715,10 +2715,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (explicit left 9998):   shift 73
@@ -2771,10 +2771,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (explicit left 9998):   shift 73
@@ -2827,10 +2827,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (explicit left 9998):   shift 73
@@ -2883,10 +2883,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   shift 101
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (explicit left 9998):   shift 73
@@ -2939,10 +2939,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (explicit left 9998):   shift 73
@@ -2995,10 +2995,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   shift 105
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (explicit left 9998):   shift 73
@@ -3051,10 +3051,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (explicit left 9998):   shift 73
@@ -3107,10 +3107,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (explicit left 9998):   shift 73
@@ -3163,10 +3163,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   reduce Exp --> 'LET' Dec 'IN' Exp
     action 'LCURLY' (noprec):   reduce Exp --> 'LET' Dec 'IN' Exp
     action 'RCURLY' (noprec):   reduce Exp --> 'LET' Dec 'IN' Exp
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'LET' Dec 'IN' Exp
     action 'FUN' (noprec):   reduce Exp --> 'LET' Dec 'IN' Exp
     action 'FN' (noprec):   reduce Exp --> 'LET' Dec 'IN' Exp
     action 'COMMA' (noprec):   reduce Exp --> 'LET' Dec 'IN' Exp
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'LET' Dec 'IN' Exp
     action 'READ' (noprec):   reduce Exp --> 'LET' Dec 'IN' Exp
     action 'WRITE' (noprec):   reduce Exp --> 'LET' Dec 'IN' Exp
     action 'DEQ' (explicit left 9998):   shift 73
@@ -3220,10 +3220,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   reduce Exps --> Exp
     action 'LCURLY' (noprec):   reduce Exps --> Exp
     action 'RCURLY' (noprec):   reduce Exps --> Exp
+    action 'SEMICOLON' (noprec):   reduce Exps --> Exp
     action 'FUN' (noprec):   reduce Exps --> Exp
     action 'FN' (noprec):   reduce Exps --> Exp
     action 'COMMA' (noprec):   shift 112
-    action 'SEMICOLON' (noprec):   reduce Exps --> Exp
     action 'READ' (noprec):   reduce Exps --> Exp
     action 'WRITE' (noprec):   reduce Exps --> Exp
     action 'DEQ' (explicit left 9998):   shift 73
@@ -3276,10 +3276,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' 'RPAR' 'ARROW' Exp
     action 'LCURLY' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' 'RPAR' 'ARROW' Exp
     action 'RCURLY' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' 'RPAR' 'ARROW' Exp
+    action 'SEMICOLON' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' 'RPAR' 'ARROW' Exp
     action 'FUN' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' 'RPAR' 'ARROW' Exp
     action 'FN' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' 'RPAR' 'ARROW' Exp
     action 'COMMA' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' 'RPAR' 'ARROW' Exp
-    action 'SEMICOLON' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' 'RPAR' 'ARROW' Exp
     action 'READ' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' 'RPAR' 'ARROW' Exp
     action 'WRITE' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' 'RPAR' 'ARROW' Exp
     action 'DEQ' (explicit left 9998):   shift 73
@@ -3332,10 +3332,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' Params 'RPAR' 'ARROW' Exp
     action 'LCURLY' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' Params 'RPAR' 'ARROW' Exp
     action 'RCURLY' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' Params 'RPAR' 'ARROW' Exp
+    action 'SEMICOLON' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' Params 'RPAR' 'ARROW' Exp
     action 'FUN' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' Params 'RPAR' 'ARROW' Exp
     action 'FN' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' Params 'RPAR' 'ARROW' Exp
     action 'COMMA' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' Params 'RPAR' 'ARROW' Exp
-    action 'SEMICOLON' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' Params 'RPAR' 'ARROW' Exp
     action 'READ' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' Params 'RPAR' 'ARROW' Exp
     action 'WRITE' (noprec):   reduce FunArg --> 'FN' Type 'LPAR' Params 'RPAR' 'ARROW' Exp
     action 'DEQ' (explicit left 9998):   shift 73
@@ -3380,10 +3380,10 @@ state 38:  items:    Exp -> 'LCURLY' Exps . 'RCURLY'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3429,10 +3429,10 @@ state 66:  items:    Exp -> Exp 'MINUS' . Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3478,10 +3478,10 @@ state 67:  items:    Exp -> Exp 'TIMES' . Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3527,10 +3527,10 @@ state 68:  items:    Exp -> Exp 'DIVIDE' . Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3576,10 +3576,10 @@ state 69:  items:    Exp -> Exp 'AND' . Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3625,10 +3625,10 @@ state 70:  items:    Exp -> Exp 'OR' . Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3674,10 +3674,10 @@ state 71:  items:    Exp -> 'NOT' . Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3723,10 +3723,10 @@ state 72:  items:    Exp -> 'NEGATE' . Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3772,10 +3772,10 @@ state 73:  items:    Exp -> Exp 'DEQ' . Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3821,10 +3821,10 @@ state 74:  items:    Exp -> Exp 'LTH' . Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3870,10 +3870,10 @@ state 75:  items:    Exp -> 'IF' . Exp 'THEN' Exp 'ELSE' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3919,10 +3919,10 @@ state 76:  items:    Exp -> 'IF' Exp 'THEN' . Exp 'ELSE' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -3968,10 +3968,10 @@ state 77:  items:    Exp -> 'IF' Exp 'THEN' Exp 'ELSE' . Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -4018,10 +4018,10 @@ state 78:  items:    Exp -> 'ID' 'LPAR' . Exps 'RPAR'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -4068,10 +4068,10 @@ state 79:  items:    Exp -> 'ID' 'LPAR' Exps . 'RPAR'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -4116,10 +4116,10 @@ state 79:  items:    Exp -> 'ID' 'LPAR' Exps . 'RPAR'
     action 'RBRACKET' (noprec):   reduce Exp --> 'ID' 'LPAR' Exps 'RPAR'
     action 'LCURLY' (noprec):   reduce Exp --> 'ID' 'LPAR' Exps 'RPAR'
     action 'RCURLY' (noprec):   reduce Exp --> 'ID' 'LPAR' Exps 'RPAR'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'ID' 'LPAR' Exps 'RPAR'
     action 'FUN' (noprec):   reduce Exp --> 'ID' 'LPAR' Exps 'RPAR'
     action 'FN' (noprec):   reduce Exp --> 'ID' 'LPAR' Exps 'RPAR'
     action 'COMMA' (noprec):   reduce Exp --> 'ID' 'LPAR' Exps 'RPAR'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'ID' 'LPAR' Exps 'RPAR'
     action 'READ' (noprec):   reduce Exp --> 'ID' 'LPAR' Exps 'RPAR'
     action 'WRITE' (noprec):   reduce Exp --> 'ID' 'LPAR' Exps 'RPAR'
     action 'DEQ' (noprec):   reduce Exp --> 'ID' 'LPAR' Exps 'RPAR'
@@ -4164,10 +4164,10 @@ state 79:  items:    Exp -> 'ID' 'LPAR' Exps . 'RPAR'
     action 'RBRACKET' (noprec):   reduce Exp --> 'ID' 'LPAR' 'RPAR'
     action 'LCURLY' (noprec):   reduce Exp --> 'ID' 'LPAR' 'RPAR'
     action 'RCURLY' (noprec):   reduce Exp --> 'ID' 'LPAR' 'RPAR'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'ID' 'LPAR' 'RPAR'
     action 'FUN' (noprec):   reduce Exp --> 'ID' 'LPAR' 'RPAR'
     action 'FN' (noprec):   reduce Exp --> 'ID' 'LPAR' 'RPAR'
     action 'COMMA' (noprec):   reduce Exp --> 'ID' 'LPAR' 'RPAR'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'ID' 'LPAR' 'RPAR'
     action 'READ' (noprec):   reduce Exp --> 'ID' 'LPAR' 'RPAR'
     action 'WRITE' (noprec):   reduce Exp --> 'ID' 'LPAR' 'RPAR'
     action 'DEQ' (noprec):   reduce Exp --> 'ID' 'LPAR' 'RPAR'
@@ -4212,10 +4212,10 @@ state 79:  items:    Exp -> 'ID' 'LPAR' Exps . 'RPAR'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -4260,10 +4260,10 @@ state 79:  items:    Exp -> 'ID' 'LPAR' Exps . 'RPAR'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -4309,10 +4309,10 @@ state 84:  items:    Exp -> 'READ' 'LPAR' Type . 'RPAR'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -4357,10 +4357,10 @@ state 84:  items:    Exp -> 'READ' 'LPAR' Type . 'RPAR'
     action 'RBRACKET' (noprec):   reduce Exp --> 'READ' 'LPAR' Type 'RPAR'
     action 'LCURLY' (noprec):   reduce Exp --> 'READ' 'LPAR' Type 'RPAR'
     action 'RCURLY' (noprec):   reduce Exp --> 'READ' 'LPAR' Type 'RPAR'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'READ' 'LPAR' Type 'RPAR'
     action 'FUN' (noprec):   reduce Exp --> 'READ' 'LPAR' Type 'RPAR'
     action 'FN' (noprec):   reduce Exp --> 'READ' 'LPAR' Type 'RPAR'
     action 'COMMA' (noprec):   reduce Exp --> 'READ' 'LPAR' Type 'RPAR'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'READ' 'LPAR' Type 'RPAR'
     action 'READ' (noprec):   reduce Exp --> 'READ' 'LPAR' Type 'RPAR'
     action 'WRITE' (noprec):   reduce Exp --> 'READ' 'LPAR' Type 'RPAR'
     action 'DEQ' (noprec):   reduce Exp --> 'READ' 'LPAR' Type 'RPAR'
@@ -4405,10 +4405,10 @@ state 84:  items:    Exp -> 'READ' 'LPAR' Type . 'RPAR'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -4453,10 +4453,10 @@ state 84:  items:    Exp -> 'READ' 'LPAR' Type . 'RPAR'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -4502,10 +4502,10 @@ state 88:  items:    Exp -> 'WRITE' 'LPAR' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   reduce Exp --> 'WRITE' 'LPAR' Exp 'RPAR'
     action 'LCURLY' (noprec):   reduce Exp --> 'WRITE' 'LPAR' Exp 'RPAR'
     action 'RCURLY' (noprec):   reduce Exp --> 'WRITE' 'LPAR' Exp 'RPAR'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'WRITE' 'LPAR' Exp 'RPAR'
     action 'FUN' (noprec):   reduce Exp --> 'WRITE' 'LPAR' Exp 'RPAR'
     action 'FN' (noprec):   reduce Exp --> 'WRITE' 'LPAR' Exp 'RPAR'
     action 'COMMA' (noprec):   reduce Exp --> 'WRITE' 'LPAR' Exp 'RPAR'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'WRITE' 'LPAR' Exp 'RPAR'
     action 'READ' (noprec):   reduce Exp --> 'WRITE' 'LPAR' Exp 'RPAR'
     action 'WRITE' (noprec):   reduce Exp --> 'WRITE' 'LPAR' Exp 'RPAR'
     action 'DEQ' (noprec):   reduce Exp --> 'WRITE' 'LPAR' Exp 'RPAR'
@@ -4550,10 +4550,10 @@ state 88:  items:    Exp -> 'WRITE' 'LPAR' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -4598,10 +4598,10 @@ state 88:  items:    Exp -> 'WRITE' 'LPAR' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -4647,10 +4647,10 @@ state 91:  items:    Exp -> 'IOTA' 'LPAR' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   reduce Exp --> 'IOTA' 'LPAR' Exp 'RPAR'
     action 'LCURLY' (noprec):   reduce Exp --> 'IOTA' 'LPAR' Exp 'RPAR'
     action 'RCURLY' (noprec):   reduce Exp --> 'IOTA' 'LPAR' Exp 'RPAR'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'IOTA' 'LPAR' Exp 'RPAR'
     action 'FUN' (noprec):   reduce Exp --> 'IOTA' 'LPAR' Exp 'RPAR'
     action 'FN' (noprec):   reduce Exp --> 'IOTA' 'LPAR' Exp 'RPAR'
     action 'COMMA' (noprec):   reduce Exp --> 'IOTA' 'LPAR' Exp 'RPAR'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'IOTA' 'LPAR' Exp 'RPAR'
     action 'READ' (noprec):   reduce Exp --> 'IOTA' 'LPAR' Exp 'RPAR'
     action 'WRITE' (noprec):   reduce Exp --> 'IOTA' 'LPAR' Exp 'RPAR'
     action 'DEQ' (noprec):   reduce Exp --> 'IOTA' 'LPAR' Exp 'RPAR'
@@ -4695,10 +4695,10 @@ state 91:  items:    Exp -> 'IOTA' 'LPAR' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -4743,10 +4743,10 @@ state 91:  items:    Exp -> 'IOTA' 'LPAR' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   shift 115
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -4792,10 +4792,10 @@ state 94:  items:    Exp -> 'MAP' 'LPAR' FunArg . 'COMMA' Exp 'RPAR'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   shift 95
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -4840,10 +4840,10 @@ state 94:  items:    Exp -> 'MAP' 'LPAR' FunArg . 'COMMA' Exp 'RPAR'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -4889,10 +4889,10 @@ state 96:  items:    Exp -> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   reduce Exp --> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR'
     action 'LCURLY' (noprec):   reduce Exp --> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR'
     action 'RCURLY' (noprec):   reduce Exp --> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR'
     action 'FUN' (noprec):   reduce Exp --> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR'
     action 'FN' (noprec):   reduce Exp --> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR'
     action 'COMMA' (noprec):   reduce Exp --> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR'
     action 'READ' (noprec):   reduce Exp --> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR'
     action 'WRITE' (noprec):   reduce Exp --> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR'
     action 'DEQ' (noprec):   reduce Exp --> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR'
@@ -4937,10 +4937,10 @@ state 96:  items:    Exp -> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -4985,10 +4985,10 @@ state 96:  items:    Exp -> 'MAP' 'LPAR' FunArg 'COMMA' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   shift 115
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -5034,10 +5034,10 @@ state 99:  items:    Exp -> 'REDUCE' 'LPAR' FunArg . 'COMMA' Exp 'COMMA' Exp 'RP
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   shift 100
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -5082,10 +5082,10 @@ state 99:  items:    Exp -> 'REDUCE' 'LPAR' FunArg . 'COMMA' Exp 'COMMA' Exp 'RP
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -5131,10 +5131,10 @@ state 101:  items:    Exp -> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' . Exp 'R
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -5180,10 +5180,10 @@ state 102:  items:    Exp -> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPA
     action 'RBRACKET' (noprec):   reduce Exp --> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPAR'
     action 'LCURLY' (noprec):   reduce Exp --> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPAR'
     action 'RCURLY' (noprec):   reduce Exp --> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPAR'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPAR'
     action 'FUN' (noprec):   reduce Exp --> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPAR'
     action 'FN' (noprec):   reduce Exp --> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPAR'
     action 'COMMA' (noprec):   reduce Exp --> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPAR'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPAR'
     action 'READ' (noprec):   reduce Exp --> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPAR'
     action 'WRITE' (noprec):   reduce Exp --> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPAR'
     action 'DEQ' (noprec):   reduce Exp --> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPAR'
@@ -5228,10 +5228,10 @@ state 102:  items:    Exp -> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPA
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -5276,10 +5276,10 @@ state 102:  items:    Exp -> 'REDUCE' 'LPAR' FunArg 'COMMA' Exp 'COMMA' Exp 'RPA
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -5325,10 +5325,10 @@ state 105:  items:    Exp -> 'REPLICATE' 'LPAR' Exp 'COMMA' . Exp 'RPAR'
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -5374,10 +5374,10 @@ state 106:  items:    Exp -> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   reduce Exp --> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR'
     action 'LCURLY' (noprec):   reduce Exp --> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR'
     action 'RCURLY' (noprec):   reduce Exp --> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR'
     action 'FUN' (noprec):   reduce Exp --> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR'
     action 'FN' (noprec):   reduce Exp --> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR'
     action 'COMMA' (noprec):   reduce Exp --> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR'
     action 'READ' (noprec):   reduce Exp --> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR'
     action 'WRITE' (noprec):   reduce Exp --> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR'
     action 'DEQ' (noprec):   reduce Exp --> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR'
@@ -5422,10 +5422,10 @@ state 106:  items:    Exp -> 'REPLICATE' 'LPAR' Exp 'COMMA' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -5471,10 +5471,10 @@ state 108:  items:    Exp -> 'LPAR' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   reduce Exp --> 'LPAR' Exp 'RPAR'
     action 'LCURLY' (noprec):   reduce Exp --> 'LPAR' Exp 'RPAR'
     action 'RCURLY' (noprec):   reduce Exp --> 'LPAR' Exp 'RPAR'
+    action 'SEMICOLON' (noprec):   reduce Exp --> 'LPAR' Exp 'RPAR'
     action 'FUN' (noprec):   reduce Exp --> 'LPAR' Exp 'RPAR'
     action 'FN' (noprec):   reduce Exp --> 'LPAR' Exp 'RPAR'
     action 'COMMA' (noprec):   reduce Exp --> 'LPAR' Exp 'RPAR'
-    action 'SEMICOLON' (noprec):   reduce Exp --> 'LPAR' Exp 'RPAR'
     action 'READ' (noprec):   reduce Exp --> 'LPAR' Exp 'RPAR'
     action 'WRITE' (noprec):   reduce Exp --> 'LPAR' Exp 'RPAR'
     action 'DEQ' (noprec):   reduce Exp --> 'LPAR' Exp 'RPAR'
@@ -5519,10 +5519,10 @@ state 108:  items:    Exp -> 'LPAR' Exp 'RPAR' .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -5568,10 +5568,10 @@ state 110:  items:    Exp -> 'LET' Dec . 'IN' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -5616,10 +5616,10 @@ state 110:  items:    Exp -> 'LET' Dec . 'IN' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -5665,10 +5665,10 @@ state 112:  items:    Exps -> Exp 'COMMA' . Exps
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -5715,10 +5715,10 @@ state 113:  items:    Exps -> Exp 'COMMA' Exps .
     action 'RBRACKET' (noprec):   reduce Exps --> Exp 'COMMA' Exps
     action 'LCURLY' (noprec):   reduce Exps --> Exp 'COMMA' Exps
     action 'RCURLY' (noprec):   reduce Exps --> Exp 'COMMA' Exps
+    action 'SEMICOLON' (noprec):   reduce Exps --> Exp 'COMMA' Exps
     action 'FUN' (noprec):   reduce Exps --> Exp 'COMMA' Exps
     action 'FN' (noprec):   reduce Exps --> Exp 'COMMA' Exps
     action 'COMMA' (noprec):   reduce Exps --> Exp 'COMMA' Exps
-    action 'SEMICOLON' (noprec):   reduce Exps --> Exp 'COMMA' Exps
     action 'READ' (noprec):   reduce Exps --> Exp 'COMMA' Exps
     action 'WRITE' (noprec):   reduce Exps --> Exp 'COMMA' Exps
     action 'DEQ' (noprec):   reduce Exps --> Exp 'COMMA' Exps
@@ -5763,10 +5763,10 @@ state 113:  items:    Exps -> Exp 'COMMA' Exps .
     action 'RBRACKET' (noprec):   reduce FunArg --> 'ID'
     action 'LCURLY' (noprec):   reduce FunArg --> 'ID'
     action 'RCURLY' (noprec):   reduce FunArg --> 'ID'
+    action 'SEMICOLON' (noprec):   reduce FunArg --> 'ID'
     action 'FUN' (noprec):   reduce FunArg --> 'ID'
     action 'FN' (noprec):   reduce FunArg --> 'ID'
     action 'COMMA' (noprec):   reduce FunArg --> 'ID'
-    action 'SEMICOLON' (noprec):   reduce FunArg --> 'ID'
     action 'READ' (noprec):   reduce FunArg --> 'ID'
     action 'WRITE' (noprec):   reduce FunArg --> 'ID'
     action 'DEQ' (noprec):   reduce FunArg --> 'ID'
@@ -5812,10 +5812,10 @@ state 113:  items:    Exps -> Exp 'COMMA' Exps .
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -5862,10 +5862,10 @@ state 116:  items:    FunArg -> 'FN' Type . 'LPAR' 'RPAR' 'ARROW' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -5911,10 +5911,10 @@ state 116:  items:    FunArg -> 'FN' Type . 'LPAR' 'RPAR' 'ARROW' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -5961,10 +5961,10 @@ state 118:  items:    FunArg -> 'FN' Type 'LPAR' 'RPAR' . 'ARROW' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -6009,10 +6009,10 @@ state 118:  items:    FunArg -> 'FN' Type 'LPAR' 'RPAR' . 'ARROW' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
@@ -6058,10 +6058,10 @@ state 120:  items:    FunArg -> 'FN' Type 'LPAR' Params . 'RPAR' 'ARROW' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -6106,10 +6106,10 @@ state 120:  items:    FunArg -> 'FN' Type 'LPAR' Params . 'RPAR' 'ARROW' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   error
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   error
     action 'WRITE' (noprec):   error
     action 'DEQ' (noprec):   error
@@ -6154,10 +6154,10 @@ state 120:  items:    FunArg -> 'FN' Type 'LPAR' Params . 'RPAR' 'ARROW' Exp
     action 'RBRACKET' (noprec):   error
     action 'LCURLY' (noprec):   shift 37
     action 'RCURLY' (noprec):   error
+    action 'SEMICOLON' (noprec):   error
     action 'FUN' (noprec):   error
     action 'FN' (noprec):   error
     action 'COMMA' (noprec):   error
-    action 'SEMICOLON' (noprec):   error
     action 'READ' (noprec):   shift 82
     action 'WRITE' (noprec):   shift 86
     action 'DEQ' (noprec):   error
