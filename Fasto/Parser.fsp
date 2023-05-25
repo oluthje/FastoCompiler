@@ -89,12 +89,12 @@ Params : Type ID COMMA Params
        | Type ID       { Param (fst $2, $1) :: [] }
 ;
 
-Dec : ID EQ Exp                { Dec (fst $1, $3, snd $1) }
-    | ID EQ Exp SEMICOLON      { Dec (fst $1, $3, snd $1) }
+Dec : ID EQ Exp                    { Dec (fst $1, $3, snd $1) }
+    | ID EQ Exp SEMICOLON Dec      { Dec (fst $1, $3, snd $1) }
 ;
 
-Decs : Dec SEMICOLON Decs       { $1 :: $3 }
-     | Dec                      { $1 :: [] } //{ [$1] }
+Decs : Dec SEMICOLON Decs      { $1 :: $3 }
+     | Dec                     { [$1] }
 ;
 
 ///////////////////////////////////////////////////////
@@ -139,8 +139,8 @@ Exp : NUM            { Constant (IntVal (fst $1), snd $1) }
                      { Replicate ($3, $5, (), $1) }
     | LPAR Exp RPAR  { $2 }
     // TODO: task 1(b): replace this with a more general production
-    | LET Decs IN Exp 
-                     { Let ($2, $4) } // or { Let ($2, $4, $1) } if Let Dec
+    | LET Dec IN Exp 
+                     { Let ($2, $4, $1) } 
 ;
 
 Exps : Exp COMMA Exps { $1 :: $3 }
