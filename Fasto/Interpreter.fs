@@ -285,9 +285,6 @@ let rec evalExp (e : UntypedExp, vtab : VarTable, ftab : FunTable) : Value =
                        raise (MyError(msg, pos))
             | otherwise -> reportWrongType "argument of \"replicate\"" Int n pos
 
-            // let mlst = List.map (fun x -> evalFunArg (farg, vtab, ftab, pos, [x])) lst
-            // ArrayVal (mlst, farg_ret_type)
-
   (* TODO project task 2: `filter(p, arr)`
        pattern match the implementation of map:
        - check that the function `p` result type (use `rtpFunArg`) is bool;
@@ -296,15 +293,37 @@ let rec evalExp (e : UntypedExp, vtab : VarTable, ftab : FunTable) : Value =
          under predicate `p`, i.e., `p(a) = true`;
        - create an `ArrayVal` from the (list) result of the previous step.
   *)
-  | Filter (_, _, _, _) ->
-        failwith "Unimplemented interpretation of filter"
+  | Filter (farg, arrexp, _, pos) ->
+      let farg_ret_type = rtpFunArg farg ftab pos
+      let arr = evalExp(arrexp, vtab, ftab)
+
+      // make sure farg returns bool
+      if farg_ret_type <> Bool then raise (MyError("Argument of filter must return bool", pos))
+
+      match arr with
+      | ArrayVal (lst,tp1) ->
+            let mlst = List.filter (fun x -> evalFunArg (farg, vtab, ftab, pos, [x]) = BoolVal true) lst
+            ArrayVal (mlst, tp1)
+      | otherwise -> reportNonArray "2nd argument of \"filter\"" arr pos
+
 
   (* TODO project task 2: `scan(f, ne, arr)`
      Implementation similar to reduce, except that it produces an array
      of the same type and length to the input array `arr`.
   *)
-  | Scan (_, _, _, _, _) ->
-        failwith "Unimplemented interpretation of scan"
+  | Scan (farg, ne, arrexp, tp, pos) ->
+      let arr  = evalExp(arrexp, vtab, ftab)
+      let ne_exp = evalExp(ne, vtab, ftab)
+      let farg_ret_type = rtpFunArg farg ftab pos
+      let arr_type = match arr with
+                     | ArrayVal (lst,tp1) -> tp1
+                     | otherwise -> raise (MyError("Argument of scan must be an array", pos))
+
+      match arr with
+        | ArrayVal (lst,tp1) ->
+              let mlst = List.tail (List.scan (fun acc x -> evalFunArg (farg, vtab, ftab, pos, [acc;x])) ne_exp lst)
+              ArrayVal (mlst, arr_type)
+        | otherwise -> reportNonArray "2nd argument of \"map\"" arr pos
 
   | Read (t,p) ->
         let str = Console.ReadLine()

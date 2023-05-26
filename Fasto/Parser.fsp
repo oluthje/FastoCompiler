@@ -43,8 +43,8 @@ let parse_error_rich =
 %token <Position> INT CHAR BOOL
 %token <Position> TRUE FALSE
 %token <Position> PLUS MINUS TIMES DIVIDE AND OR NOT NEGATE LESS
-%token <Position> DEQ LTH EQ MAP REDUCE IOTA ARROW REPLICATE
-%token <Position> SEMICOLON FUN FN COMMA READ WRITE
+%token <Position> DEQ LTH EQ MAP REDUCE IOTA ARROW REPLICATE FILTER SCAN
+%token <Position> FUN FN COMMA SEMICOLON READ WRITE
 %token <Position> LPAR RPAR LBRACKET RBRACKET LCURLY RCURLY
 
 %nonassoc ifprec letprec
@@ -137,6 +137,10 @@ Exp : NUM            { Constant (IntVal (fst $1), snd $1) }
                      { Reduce ($3, $5, $7, (), $1) }
     | REPLICATE LPAR Exp COMMA Exp RPAR
                      { Replicate ($3, $5, (), $1) }
+    | FILTER LPAR FunArg COMMA Exp RPAR
+                     { Filter ($3, $5, (), $1) }
+    | SCAN LPAR FunArg COMMA Exp COMMA Exp RPAR
+                     { Scan ($3, $5, $7, (), $1) }
     | LPAR Exp RPAR  { $2 }
     // TODO: task 1(b): replace this with a more general production
     | LET Dec IN Exp 
