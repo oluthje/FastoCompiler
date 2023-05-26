@@ -7,10 +7,10 @@ type token =
   | RBRACKET of (Position)
   | LCURLY of (Position)
   | RCURLY of (Position)
-  | SEMICOLON of (Position)
   | FUN of (Position)
   | FN of (Position)
   | COMMA of (Position)
+  | SEMICOLON of (Position)
   | READ of (Position)
   | WRITE of (Position)
   | DEQ of (Position)
@@ -21,6 +21,8 @@ type token =
   | IOTA of (Position)
   | ARROW of (Position)
   | REPLICATE of (Position)
+  | FILTER of (Position)
+  | SCAN of (Position)
   | PLUS of (Position)
   | MINUS of (Position)
   | TIMES of (Position)
@@ -52,10 +54,10 @@ type tokenId =
     | TOKEN_RBRACKET
     | TOKEN_LCURLY
     | TOKEN_RCURLY
-    | TOKEN_SEMICOLON
     | TOKEN_FUN
     | TOKEN_FN
     | TOKEN_COMMA
+    | TOKEN_SEMICOLON
     | TOKEN_READ
     | TOKEN_WRITE
     | TOKEN_DEQ
@@ -66,6 +68,8 @@ type tokenId =
     | TOKEN_IOTA
     | TOKEN_ARROW
     | TOKEN_REPLICATE
+    | TOKEN_FILTER
+    | TOKEN_SCAN
     | TOKEN_PLUS
     | TOKEN_MINUS
     | TOKEN_TIMES
