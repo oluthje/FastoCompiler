@@ -139,9 +139,10 @@ let rec removeDeadBindingsInExp (e : TypedExp) : (bool * DBRtab * TypedExp) =
             let uses = SymTab.combine uses1 uses2_without_name
             let ios = ios1 || (ios2 && (match SymTab.lookup name uses2 with Some _ -> true | None -> false))
             
-            if (match SymTab.lookup name uses with Some _ -> true | None -> false)
-            then (ios, uses, Let (Dec (name, e', decpos), body', pos))
-            else (ios2, uses2_without_name, body')
+            match SymTab.lookup name uses with
+                | Some _ -> (ios, uses, Let (Dec (name, e', decpos), body', pos))
+                | None _ -> (ios2, uses2_without_name, body')
+                
             (* Task 3, Hints for the `Let` case:
                   - recursively process the `e` and `body` subexpressions
                     of the Let-binding
