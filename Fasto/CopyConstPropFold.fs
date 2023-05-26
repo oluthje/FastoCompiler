@@ -60,7 +60,7 @@ let rec copyConstPropFoldExp (vtable : VarTable)
                 | Constant (var, pos) ->
                     let vtable' = SymTab.bind name (ConstProp var) vtable in
                     let body' = copyConstPropFoldExp vtable' body in
-                    Let (Dec (name, Constant (var, pos), decpos), body', pos)
+                    Let (Dec (name, Constant (var, decpos), decpos), body', pos)
                     (* TODO project task 3:
                         Hint: I have discovered a constant-copy statement `let x = 5`.
                               I should probably record it in the `vtable` by
