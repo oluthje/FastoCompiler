@@ -49,7 +49,8 @@ let rec copyConstPropFoldExp (vtable : VarTable)
             match e' with
                 | Var (var, _) ->
                     let vtable' = SymTab.bind name (VarProp var) vtable in
-                    copyConstPropFoldExp vtable' body
+                    let body' = copyConstPropFoldExp vtable' body in
+                    Let (Dec (name, e', decpos), body', pos)
                     (* TODO project task 3:
                         Hint: I have discovered a variable-copy statement `let x = a`.
                               I should probably record it in the `vtable` by
