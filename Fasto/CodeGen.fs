@@ -368,24 +368,32 @@ let rec compileExp  (e      : TypedExp)
     let t2 = newReg "and_R"
     let thenLabel = newLab "then"
     let elseLabel = newLab "else"
-    let endLabel = newLab "endif"
     let code0 = compileCond e1 vtable thenLabel elseLabel
     let code1 = compileExp e1 vtable t1
     let code2 = compileExp e2 vtable t2
-    code0 @ [LABEL thenLabel] @ code1 @ code2 @ [AND (place, t1, t2)] @
-    [J endLabel; LABEL elseLabel] @ [AND (place,Rzero,Rzero)] @ [LABEL endLabel]
+     
+    [AND (place,Rzero,Rzero)]
+    @ code0
+    @ [LABEL thenLabel]
+    @ code1 @ code2
+    @ [AND (place, t1, t2)]
+    @ [LABEL elseLabel]
 
   | Or (e1, e2, pos) ->
     let t1 = newReg "or_L"
     let t2 = newReg "or_R"
     let thenLabel = newLab "then"
     let elseLabel = newLab "else"
-    let endLabel = newLab "endif"
     let code0 = compileCond e1 vtable thenLabel elseLabel
     let code1 = compileExp e1 vtable t1
     let code2 = compileExp e2 vtable t2
-    code0 @ [LABEL thenLabel] @ [ORI (place, t1, 1)] @
-    [J endLabel; LABEL elseLabel] @ code1 @ code2 @ [OR (place,t1,t2)] @ [LABEL endLabel]
+
+    [ORI (place, t1, 1)]
+    @ code0
+    @ [LABEL elseLabel]
+    @ code1 @ code2
+    @ [OR (place,t1,t2)]
+    @ [LABEL thenLabel]
 
   (* TODO project task 2:
         Look in `AbSyn.fs` for the expression constructor of `Not`.
