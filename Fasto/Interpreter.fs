@@ -280,7 +280,7 @@ let rec evalExp (e : UntypedExp, vtab : VarTable, ftab : FunTable) : Value =
       match n with
             | IntVal size ->
                   if size >= 0
-                  then ArrayVal( List.map (fun x -> a) [0..size-1], Int )
+                  then ArrayVal( List.replicate size a, Int )
                   else let msg = sprintf "Argument of \"replicate\" is negative: %i" size
                        raise (MyError(msg, pos))
             | otherwise -> reportWrongType "argument of \"replicate\"" Int n pos
