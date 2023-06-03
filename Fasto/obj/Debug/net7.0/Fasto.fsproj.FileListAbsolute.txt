@@ -28,13 +28,6 @@
 /Users/oscarluthje/Desktop/IPS/GAssignment/fasto/Fasto/obj/Debug/net7.0/Fasto.pdb
 /Users/oscarluthje/Desktop/IPS/GAssignment/fasto/Fasto/obj/Debug/net7.0/Fasto.genruntimeconfig.cache
 /Users/oscarluthje/Desktop/IPS/GAssignment/fasto/Fasto/obj/Debug/net7.0/ref/Fasto.dll
-C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.fsproj.AssemblyReference.cache
-C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.AssemblyInfoInputs.cache
-C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.AssemblyInfo.fs
-C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.fsproj.CoreCompileInputs.cache
-C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.dll
-C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\refint\Fasto.dll
-C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.pdb
 C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\bin\Debug\net7.0\Fasto.exe
 C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\bin\Debug\net7.0\Fasto.deps.json
 C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\bin\Debug\net7.0\Fasto.runtimeconfig.json
@@ -55,6 +48,13 @@ C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\bin\Debug\net7.0\r
 C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\bin\Debug\net7.0\tr\FSharp.Core.resources.dll
 C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\bin\Debug\net7.0\zh-Hans\FSharp.Core.resources.dll
 C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\bin\Debug\net7.0\zh-Hant\FSharp.Core.resources.dll
+C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.fsproj.AssemblyReference.cache
+C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.AssemblyInfoInputs.cache
+C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.AssemblyInfo.fs
+C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.fsproj.CoreCompileInputs.cache
 C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.fsproj.CopyComplete
+C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.dll
+C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\refint\Fasto.dll
+C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.pdb
 C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\Fasto.genruntimeconfig.cache
 C:\Users\Nynne\OneDrive\Dokumenter\KU\IPS\FastoCompiler\Fasto\obj\Debug\net7.0\ref\Fasto.dll
