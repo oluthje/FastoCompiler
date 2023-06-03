@@ -145,6 +145,8 @@ Exp : NUM            { Constant (IntVal (fst $1), snd $1) }
     // TODO: task 1(b): replace this with a more general production
     | LET Dec IN Exp 
                      { Let ($2, $4, $1) } 
+    | ID LBRACKET Exp RBRACKET
+                     { Index (fst $1, $3, (), $2) }
 ;
 
 Exps : Exp COMMA Exps { $1 :: $3 }
