@@ -48,9 +48,9 @@ let rec copyConstPropFoldExp (vtable : VarTable)
             let e' = copyConstPropFoldExp vtable e
             match e' with
                 | Var (var, _) ->
-                    let vtable' = SymTab.bind name (VarProp var) vtable in
-                    let body' = copyConstPropFoldExp vtable' body in
-                    Let (Dec (name, e', decpos), body', pos)
+                    // let vtable' = SymTab.bind name (VarProp var) vtable in
+                    // let innerBody = copyConstPropFoldExp vtable' body in
+                    Let (Dec (name, e', decpos), body, pos) //body' body innerBody
                     (* TODO project task 3:
                         Hint: I have discovered a variable-copy statement `let x = a`.
                               I should probably record it in the `vtable` by
@@ -59,9 +59,9 @@ let rec copyConstPropFoldExp (vtable : VarTable)
                     *)
                     //failwith "Unimplemented copyConstPropFold for Let with Var"
                 | Constant (var, pos) ->
-                    let vtable' = SymTab.bind name (ConstProp var) vtable in
-                    let body' = copyConstPropFoldExp vtable' body in
-                    Let (Dec (name, Constant (var, decpos), decpos), body', pos)
+                    // let vtable' = SymTab.bind name (ConstProp var) vtable in
+                    // let body' = copyConstPropFoldExp vtable' body in
+                    Let (Dec (name, Constant (var, decpos), decpos), body, pos) //body'
                     (* TODO project task 3:
                         Hint: I have discovered a constant-copy statement `let x = 5`.
                               I should probably record it in the `vtable` by
@@ -70,10 +70,10 @@ let rec copyConstPropFoldExp (vtable : VarTable)
                     *)
                     //failwith "Unimplemented copyConstPropFold for Let with Constant"
                 | Let (Dec (innerName, innerExp, innerPos), innerBody, pos) ->
-                    let innerExp' = copyConstPropFoldExp vtable innerExp in
-                    let vtable' = SymTab.bind innerName (VarProp name) vtable in
-                    let innerBody' = copyConstPropFoldExp vtable' innerBody in
-                    Let (Dec (innerName, innerExp', innerPos), innerBody', pos)
+                    // let innerExp' = copyConstPropFoldExp vtable innerExp in
+                    // let vtable' = SymTab.bind innerName (VarProp name) vtable in
+                    let innerBody' = copyConstPropFoldExp vtable innerBody in //vtable'
+                    Let (Dec (innerName, innerExp, innerPos), innerBody', pos) //innerExp' innerBody
                     (* TODO project task 3:
                         Hint: this has the structure
                                 `let y = (let x = e1 in e2) in e3`
@@ -95,8 +95,8 @@ let rec copyConstPropFoldExp (vtable : VarTable)
             let e2' = copyConstPropFoldExp vtable e2
             match (e1', e2') with
                 | (Constant (IntVal x, _), Constant (IntVal y, _)) -> Constant (IntVal (x * y), pos)
-                | (Constant (IntVal 0, _), _) -> e2'
-                | (_, Constant (IntVal 0, _)) -> e1'
+                | (Constant (IntVal 0, _), _) -> Constant (IntVal 0, pos)  // Multiplication by 0 results in 0
+                | (_, Constant (IntVal 0, _)) -> Constant (IntVal 0, pos)  // Multiplication by 0 results in 0
                 | _ -> Times (e1', e2', pos)
             (* TODO project task 3: implement as many safe algebraic
                simplifications as you can think of. You may inspire

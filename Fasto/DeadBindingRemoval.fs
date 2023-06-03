@@ -63,16 +63,17 @@ let rec removeDeadBindingsInExp (e : TypedExp) : (bool * DBRtab * TypedExp) =
         (* ToDO: Task 3: implement the cases of `Var`, `Index` and `Let` expressions below *)
         | Var (name, pos) ->
             let stab = SymTab.empty() (* Current symbol table *)
-            let ios = isUsed name stab (* Check if the variable is used *)
             let uses = recordUse name stab (* Record the variable as used in the symbol table *)
-            (ios, uses, Var (name, pos))
+            (false, uses,  Var (name, pos)) // SymTab.empty() uses
+            // let ios = isUsed name stab (* Check if the variable is used *)
+            // (ios, uses, Var (name, pos))
             (* Task 3, Hints for the `Var` case:
                   - 1st element of result tuple: can a variable name contain IO?
                   - 2nd element of result tuple: you have discovered a name, hence
                         you need to record it in a new symbol table.
                   - 3rd element of the tuple: should be the optimised expression.
             *)
-            //failwith "Unimplemented removeDeadBindingsInExp for Var"
+            // failwith "Unimplemented removeDeadBindingsInExp for Var"
         | Plus (x, y, pos) ->
             let (xios, xuses, x') = removeDeadBindingsInExp x
             let (yios, yuses, y') = removeDeadBindingsInExp y
@@ -131,17 +132,19 @@ let rec removeDeadBindingsInExp (e : TypedExp) : (bool * DBRtab * TypedExp) =
             let (ios1, uses1, e') = removeDeadBindingsInExp e
             let (ios2, uses2, body') = removeDeadBindingsInExp body
             
-            let uses2_without_name =
-                match SymTab.lookup name uses2 with
-                | Some pos -> SymTab.remove name uses2
-                | None -> uses2
-            
-            let uses = SymTab.combine uses1 uses2_without_name
-            let ios = ios1 || (ios2 && (match SymTab.lookup name uses2 with Some _ -> true | None -> false))
-            
+            let uses = SymTab.combine uses1 uses2
             match SymTab.lookup name uses with
-                | Some _ -> (ios, uses, Let (Dec (name, e', decpos), body', pos))
-                | None _ -> (ios2, uses2_without_name, body')
+                | Some _ -> (ios1 || ios2, uses, Let (Dec (name, e', decpos), body', pos))
+                | None _ -> (ios1 || ios2 , uses, body')
+
+            // let uses2_without_name =
+            //     match SymTab.lookup name uses2 with
+            //     | Some pos -> SymTab.remove name uses2
+            //     | None -> uses2
+            
+            // let uses = SymTab.combine uses1 uses2_without_name
+            // let ios = ios1 || (ios2 && (match SymTab.lookup name uses2 with Some _ -> true | None -> false))
+            
                 
             (* Task 3, Hints for the `Let` case:
                   - recursively process the `e` and `body` subexpressions
