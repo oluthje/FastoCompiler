@@ -135,7 +135,7 @@ let rec removeDeadBindingsInExp (e : TypedExp) : (bool * DBRtab * TypedExp) =
             let uses = SymTab.combine uses1 uses2
             match SymTab.lookup name uses with
                 | Some _ -> (ios1 || ios2, uses, Let (Dec (name, e', decpos), body', pos))
-                | None _ -> (ios1 || ios2 , uses, body')
+                | None -> (ios2 , uses, body')
 
             // let uses2_without_name =
             //     match SymTab.lookup name uses2 with
