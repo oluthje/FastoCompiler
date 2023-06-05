@@ -21,10 +21,12 @@ f.main:
 	sw	x19, -12(x2)
 	sw	x18, -8(x2)
 	addi	x2, x2, -12
+	and	x11, x0, x0
+# was:	and	_tmp_4_, x0, x0
 	li	x10, 0
-# was:	li	_cond_10_, 0
+# was:	li	_cond_9_, 0
 	bne	x10, x0, l.then_7_
-# was:	bne	_cond_10_, x0, l.then_7_
+# was:	bne	_cond_9_, x0, l.then_7_
 	j	l.else_8_
 l.then_7_:
 	li	x19, 0
@@ -34,47 +36,41 @@ l.then_7_:
 # 	mv	_and_R_6_,x10
 	and	x11, x19, x10
 # was:	and	_tmp_4_, _and_L_5_, _and_R_6_
-	j	l.endif_9_
 l.else_8_:
-	and	x11, x0, x0
-# was:	and	_tmp_4_, x0, x0
-l.endif_9_:
 # 	mv	_let_a_3_,_tmp_4_
 	la	x10, s.true
 # was:	la	x10, s.true
-	bne	x11, x0, l.wBoolF_11_
-# was:	bne	_let_a_3_, x0, l.wBoolF_11_
+	bne	x11, x0, l.wBoolF_10_
+# was:	bne	_let_a_3_, x0, l.wBoolF_10_
 	la	x10, s.false
 # was:	la	x10, s.false
-l.wBoolF_11_:
+l.wBoolF_10_:
 	jal	p.putstring
 # was:	jal	p.putstring, x10
-	li	x10, 1
-# was:	li	_cond_19_, 1
-	bne	x10, x0, l.then_16_
-# was:	bne	_cond_19_, x0, l.then_16_
-	j	l.else_17_
-l.then_16_:
 	ori	x11, x18, 1
-# was:	ori	_tmp_13_, _or_L_14_, 1
-	j	l.endif_18_
-l.else_17_:
+# was:	ori	_tmp_12_, _or_L_13_, 1
+	li	x10, 1
+# was:	li	_cond_17_, 1
+	bne	x10, x0, l.then_15_
+# was:	bne	_cond_17_, x0, l.then_15_
+	j	l.else_16_
+l.else_16_:
 	li	x18, 1
-# was:	li	_or_L_14_, 1
+# was:	li	_or_L_13_, 1
 	jal	f.no_way
 # was:	jal	f.no_way, 
-# 	mv	_or_R_15_,x10
+# 	mv	_or_R_14_,x10
 	or	x11, x18, x10
-# was:	or	_tmp_13_, _or_L_14_, _or_R_15_
-l.endif_18_:
-# 	mv	_let_b_12_,_tmp_13_
+# was:	or	_tmp_12_, _or_L_13_, _or_R_14_
+l.then_15_:
+# 	mv	_let_b_11_,_tmp_12_
 	la	x10, s.true
 # was:	la	x10, s.true
-	bne	x11, x0, l.wBoolF_20_
-# was:	bne	_let_b_12_, x0, l.wBoolF_20_
+	bne	x11, x0, l.wBoolF_18_
+# was:	bne	_let_b_11_, x0, l.wBoolF_18_
 	la	x10, s.false
 # was:	la	x10, s.false
-l.wBoolF_20_:
+l.wBoolF_18_:
 	jal	p.putstring
 # was:	jal	p.putstring, x10
 	li	x10, 1

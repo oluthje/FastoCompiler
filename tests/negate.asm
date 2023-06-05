@@ -107,17 +107,17 @@ l.false_27_:
 # was:	mv	x10, _arg_19_
 	jal	f.write_nl
 # was:	jal	f.write_nl, x10
-	mv	x18, x10
+	mv	x19, x10
 # was:	mv	_let_x1_18_, x10
-	li	x10, 3
+	li	x11, 3
 # was:	li	_divide_L_32_, 3
-	li	x11, 2
+	li	x10, 2
 # was:	li	_negate_34_, 2
-	sub	x12, x0, x11
+	sub	x12, x0, x10
 # was:	sub	_divide_R_33_, x0, _negate_34_
-	li	x11, 0
+	li	x10, 0
 # was:	li	_eq_L_30_, 0
-	bne	x12, x11, l.falseLabel_35_
+	bne	x12, x10, l.falseLabel_35_
 # was:	bne	_divide_R_33_, _eq_L_30_, l.falseLabel_35_
 	li	x10, 9
 # was:	li	x10, 9
@@ -125,34 +125,34 @@ l.false_27_:
 # was:	la	x11, m.DivZero
 	j	p.RuntimeError
 l.falseLabel_35_:
-	div	x11, x10, x12
+	div	x10, x11, x12
 # was:	div	_eq_L_30_, _divide_L_32_, _divide_R_33_
-	li	x10, 2
+	li	x11, 2
 # was:	li	_negate_36_, 2
-	sub	x10, x0, x10
+	sub	x12, x0, x11
 # was:	sub	_eq_R_31_, x0, _negate_36_
-	li	x12, 0
+	li	x11, 0
 # was:	li	_arg_29_, 0
-	bne	x11, x10, l.false_37_
+	bne	x10, x12, l.false_37_
 # was:	bne	_eq_L_30_, _eq_R_31_, l.false_37_
-	li	x12, 1
+	li	x11, 1
 # was:	li	_arg_29_, 1
 l.false_37_:
-	mv	x10, x12
+	mv	x10, x11
 # was:	mv	x10, _arg_29_
 	jal	f.write_nl
 # was:	jal	f.write_nl, x10
-	mv	x19, x10
+	mv	x18, x10
 # was:	mv	_let_x2_28_, x10
-	li	x10, 3
+	li	x11, 3
 # was:	li	_divide_L_43_, 3
-	li	x11, 2
+	li	x10, 2
 # was:	li	_negate_45_, 2
-	sub	x11, x0, x11
+	sub	x12, x0, x10
 # was:	sub	_divide_R_44_, x0, _negate_45_
-	li	x12, 0
+	li	x10, 0
 # was:	li	_negate_42_, 0
-	bne	x11, x12, l.falseLabel_46_
+	bne	x12, x10, l.falseLabel_46_
 # was:	bne	_divide_R_44_, _negate_42_, l.falseLabel_46_
 	li	x10, 10
 # was:	li	x10, 10
@@ -160,9 +160,9 @@ l.false_37_:
 # was:	la	x11, m.DivZero
 	j	p.RuntimeError
 l.falseLabel_46_:
-	div	x12, x10, x11
+	div	x10, x11, x12
 # was:	div	_negate_42_, _divide_L_43_, _divide_R_44_
-	sub	x12, x0, x12
+	sub	x12, x0, x10
 # was:	sub	_eq_L_40_, x0, _negate_42_
 	li	x10, 1
 # was:	li	_eq_R_41_, 1
@@ -178,111 +178,98 @@ l.false_47_:
 	jal	f.write_nl
 # was:	jal	f.write_nl, x10
 # 	mv	_let_x3_38_,x10
-# 	mv	_cond_66_,_let_x0_10_
-	bne	x20, x0, l.then_63_
-# was:	bne	_cond_66_, x0, l.then_63_
-	j	l.else_64_
-l.then_63_:
-# 	mv	_and_L_61_,_let_x0_10_
-# 	mv	_not_67_,_let_x1_18_
-	xori	x11, x18, 1
-# was:	xori	_and_R_62_, _not_67_, 1
-	and	x11, x20, x11
-# was:	and	_cond_60_, _and_L_61_, _and_R_62_
-	j	l.endif_65_
-l.else_64_:
 	and	x11, x0, x0
-# was:	and	_cond_60_, x0, x0
-l.endif_65_:
-	bne	x11, x0, l.then_57_
-# was:	bne	_cond_60_, x0, l.then_57_
-	j	l.else_58_
-l.then_57_:
-# 	mv	_cond_73_,_let_x0_10_
-	bne	x20, x0, l.then_70_
-# was:	bne	_cond_73_, x0, l.then_70_
-	j	l.else_71_
-l.then_70_:
-# 	mv	_and_L_68_,_let_x0_10_
-# 	mv	_not_74_,_let_x1_18_
-	xori	x11, x18, 1
-# was:	xori	_and_R_69_, _not_74_, 1
-	and	x11, x20, x11
-# was:	and	_and_L_55_, _and_L_68_, _and_R_69_
-	j	l.endif_72_
-l.else_71_:
-	and	x11, x0, x0
-# was:	and	_and_L_55_, x0, x0
-l.endif_72_:
-# 	mv	_not_75_,_let_x2_28_
+# was:	and	_arg_48_, x0, x0
+	and	x12, x0, x0
+# was:	and	_cond_53_, x0, x0
+	and	x13, x0, x0
+# was:	and	_cond_58_, x0, x0
+# 	mv	_cond_63_,_let_x0_10_
+	bne	x20, x0, l.then_61_
+# was:	bne	_cond_63_, x0, l.then_61_
+	j	l.else_62_
+l.then_61_:
+# 	mv	_and_L_59_,_let_x0_10_
+# 	mv	_not_64_,_let_x1_18_
+	xori	x13, x19, 1
+# was:	xori	_and_R_60_, _not_64_, 1
+	and	x13, x20, x13
+# was:	and	_cond_58_, _and_L_59_, _and_R_60_
+l.else_62_:
+	bne	x13, x0, l.then_56_
+# was:	bne	_cond_58_, x0, l.then_56_
+	j	l.else_57_
+l.then_56_:
+	and	x12, x0, x0
+# was:	and	_and_L_54_, x0, x0
+# 	mv	_cond_69_,_let_x0_10_
+	bne	x20, x0, l.then_67_
+# was:	bne	_cond_69_, x0, l.then_67_
+	j	l.else_68_
+l.then_67_:
+# 	mv	_and_L_65_,_let_x0_10_
+# 	mv	_not_70_,_let_x1_18_
 	xori	x12, x19, 1
-# was:	xori	_and_R_56_, _not_75_, 1
-	and	x11, x11, x12
-# was:	and	_cond_54_, _and_L_55_, _and_R_56_
-	j	l.endif_59_
-l.else_58_:
-	and	x11, x0, x0
-# was:	and	_cond_54_, x0, x0
-l.endif_59_:
-	bne	x11, x0, l.then_51_
-# was:	bne	_cond_54_, x0, l.then_51_
+# was:	xori	_and_R_66_, _not_70_, 1
+	and	x12, x20, x12
+# was:	and	_and_L_54_, _and_L_65_, _and_R_66_
+l.else_68_:
+# 	mv	_not_71_,_let_x2_28_
+	xori	x13, x18, 1
+# was:	xori	_and_R_55_, _not_71_, 1
+	and	x12, x12, x13
+# was:	and	_cond_53_, _and_L_54_, _and_R_55_
+l.else_57_:
+	bne	x12, x0, l.then_51_
+# was:	bne	_cond_53_, x0, l.then_51_
 	j	l.else_52_
 l.then_51_:
-# 	mv	_cond_87_,_let_x0_10_
-	bne	x20, x0, l.then_84_
-# was:	bne	_cond_87_, x0, l.then_84_
-	j	l.else_85_
-l.then_84_:
-# 	mv	_and_L_82_,_let_x0_10_
-# 	mv	_not_88_,_let_x1_18_
-	xori	x11, x18, 1
-# was:	xori	_and_R_83_, _not_88_, 1
-	and	x11, x20, x11
-# was:	and	_cond_81_, _and_L_82_, _and_R_83_
-	j	l.endif_86_
-l.else_85_:
-	and	x11, x0, x0
-# was:	and	_cond_81_, x0, x0
-l.endif_86_:
-	bne	x11, x0, l.then_78_
-# was:	bne	_cond_81_, x0, l.then_78_
-	j	l.else_79_
-l.then_78_:
-# 	mv	_cond_94_,_let_x0_10_
-	bne	x20, x0, l.then_91_
-# was:	bne	_cond_94_, x0, l.then_91_
-	j	l.else_92_
-l.then_91_:
-# 	mv	_and_L_89_,_let_x0_10_
-# 	mv	_not_95_,_let_x1_18_
-	xori	x11, x18, 1
-# was:	xori	_and_R_90_, _not_95_, 1
-	and	x11, x20, x11
-# was:	and	_and_L_76_, _and_L_89_, _and_R_90_
-	j	l.endif_93_
-l.else_92_:
-	and	x11, x0, x0
-# was:	and	_and_L_76_, x0, x0
-l.endif_93_:
-# 	mv	_not_96_,_let_x2_28_
-	xori	x12, x19, 1
-# was:	xori	_and_R_77_, _not_96_, 1
-	and	x11, x11, x12
-# was:	and	_and_L_49_, _and_L_76_, _and_R_77_
-	j	l.endif_80_
-l.else_79_:
 	and	x11, x0, x0
 # was:	and	_and_L_49_, x0, x0
-l.endif_80_:
+	and	x12, x0, x0
+# was:	and	_cond_76_, x0, x0
+# 	mv	_cond_81_,_let_x0_10_
+	bne	x20, x0, l.then_79_
+# was:	bne	_cond_81_, x0, l.then_79_
+	j	l.else_80_
+l.then_79_:
+# 	mv	_and_L_77_,_let_x0_10_
+# 	mv	_not_82_,_let_x1_18_
+	xori	x12, x19, 1
+# was:	xori	_and_R_78_, _not_82_, 1
+	and	x12, x20, x12
+# was:	and	_cond_76_, _and_L_77_, _and_R_78_
+l.else_80_:
+	bne	x12, x0, l.then_74_
+# was:	bne	_cond_76_, x0, l.then_74_
+	j	l.else_75_
+l.then_74_:
+	and	x11, x0, x0
+# was:	and	_and_L_72_, x0, x0
+# 	mv	_cond_87_,_let_x0_10_
+	bne	x20, x0, l.then_85_
+# was:	bne	_cond_87_, x0, l.then_85_
+	j	l.else_86_
+l.then_85_:
+# 	mv	_and_L_83_,_let_x0_10_
+# 	mv	_not_88_,_let_x1_18_
+	xori	x11, x19, 1
+# was:	xori	_and_R_84_, _not_88_, 1
+	and	x11, x20, x11
+# was:	and	_and_L_72_, _and_L_83_, _and_R_84_
+l.else_86_:
+# 	mv	_not_89_,_let_x2_28_
+	xori	x12, x18, 1
+# was:	xori	_and_R_73_, _not_89_, 1
+	and	x11, x11, x12
+# was:	and	_and_L_49_, _and_L_72_, _and_R_73_
+l.else_75_:
 # 	mv	_and_R_50_,_let_x3_38_
-	and	x10, x11, x10
+	and	x11, x11, x10
 # was:	and	_arg_48_, _and_L_49_, _and_R_50_
-	j	l.endif_53_
 l.else_52_:
-	and	x10, x0, x0
-# was:	and	_arg_48_, x0, x0
-l.endif_53_:
-# 	mv	x10,_arg_48_
+	mv	x10, x11
+# was:	mv	x10, _arg_48_
 	jal	f.write_nl
 # was:	jal	f.write_nl, x10
 # 	mv	_mainres_9_,x10
