@@ -17,8 +17,9 @@ let parse_error_rich =
       | Some token -> sprintf "at token %A\n" token
   )
 
-%}
-
+let rec MultiLet = 
+     | $2 -> Dec
+     | (($2) :: rest) -> Let ($2, Multilet rest, $1)
 //////////////////////////////////////////////////////////////////////
 // TODO: Add new (lexer) token definitions:
 //
@@ -46,7 +47,7 @@ let parse_error_rich =
 %token <Position> DEQ LTH EQ MAP REDUCE IOTA ARROW REPLICATE FILTER SCAN
 %token <Position> FUN FN COMMA SEMICOLON READ WRITE
 %token <Position> LPAR RPAR LBRACKET RBRACKET LCURLY RCURLY
-
+cj
 %nonassoc ifprec letprec
 %left DEQ LTH AND OR NOT NEGATE
 %left PLUS MINUS TIMES DIVIDE
@@ -94,8 +95,10 @@ Dec : ID EQ Exp                       { Dec (fst $1, $3, snd $1) }
 ;
 
 Decs : Dec SEMICOLON Decs      { $1 :: $3 }
-     | Dec                     { $1 :: [] }//{ [$1] }
+     | Dec                     { $1 :: [] }
 ;
+
+
 
 ///////////////////////////////////////////////////////
 // TODO: project tasks 1,2,4: 
